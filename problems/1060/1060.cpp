@@ -11,138 +11,96 @@ using namespace std;
 typedef long long ll;
 typedef long double ld;
 
-struct point
-{
-    int x;
-    int y;
-};
-
-struct step
-{
-    point begin;
-    point end;
-};
-
 vector<vector<int>> ss;
-stack<step> st;
 
 void solve()
 {
     int n;
     cin >> n;
-    char ms[n + 2][n + 2];
-    for (int i = 0; i < n + 2; i++)
-    {
-        ms[0][i] = 'O';
-        ms[i][0] = 'O';
-        ms[n + 1][i] = 'O';
-        ms[i][n + 1] = 'O';
-    }
+    char ms[(n + 2) * (n + 2)];
+    int start, finish;
 
-    point start, finish, cur;
-    char ch;
-    for (int i = 1; i <= n; i++)
-        for (int j = 1; j <= n; j++)
+    bool used[(n + 2) * (n + 2)];
+    memset(used, true, sizeof(used));
+
+    for (int i = 1; i <= (n + 2) * (n + 2); i++)
+    {
+        char ch;
+        bool kromka = i / (n + 2) == 0 || i / (n + 2) == n + 1 || i % (n + 2) == 1 || i % (n + 2) == 0;
+        if (kromka)
+            ms[i] = 'O';
+        else
         {
             cin >> ch;
-            ms[i][j] = ch;
+            ms[i] = ch;
             if (ch == '@')
-                start = {i, j};
+                start = i;
             else if (ch == 'X')
-                finish = {i, j};
+                finish = i;
+
+            if (ch != 'O')
+                used[i] = false;
         }
-
-    // for (int i = 0; i <= n+1; i++)
-    // {
-    //     for (int j = 0; j <= n+1; j++)
-    //     {
-    //         cout << " " << ms[i][j];
-    //     }
-    //     cout << endl;
-    // }
-    //printf("start.x=%d start.y=%d", start.x, start.y);
-
-    bool fl = false;
-    bool run = true;
-
-    cur = start;
-
-    while (run)
-    {
-        //st.push({cur, start});
-
-        char l = ms[cur.x - 1][cur.y];
-        char r = ms[cur.x + 1][cur.y];
-        char u = ms[cur.x][cur.y - 1];
-        char d = ms[cur.x][cur.y + 1];
-
-        fl = (l == 'X' || r == 'X' || u == 'X' || d == 'X' ? true : fl);
-        run = (fl || l == '.' || r == '.' || u == '.' || d == '.' ? true : false);
-
-        if (l == '.' || l == 'X')
-        {
-            st.push({cur, {cur.x - 1, cur.y}});
-            ms[cur.x - 1][cur.y] = '#';
-            cur.x -= 1;
-        }
-        if (l == 'X')
-            break;
-
-        if (r == '.' || r == 'X')
-        {
-            st.push({cur, {cur.x + 1, cur.y}});
-            ms[cur.x + 1][cur.y] = '#';
-            cur.x += 1;
-        }
-        if (r == 'X')
-            break;
-
-        if (u == '.' || u == 'X')
-        {
-            st.push({cur, {cur.x, cur.y - 1}});
-            ms[cur.x][cur.y - 1] = '#';
-            cur.y -= 1;
-        }
-        if (u == 'X')
-            break;
-
-        if (d == '.' || d == 'X')
-        {
-            st.push({cur, {cur.x, cur.y + 1}});
-            ms[cur.x][cur.y + 1] = '#';
-            cur.y += 1;
-        }
-        if (d == 'X')
-            break;
     }
 
-    if (!fl)
-        cout << "N" << endl;
-    else
-    {
-        cout << "Y" << endl;
-        point cur;
-        cur = finish;
-        while (!st.empty())
-        {
-            auto top = st.top();
-            st.pop();
-            if (top.end.x == cur.x && top.end.y == cur.y)
-            {
-                ms[top.end.x][top.end.y] = '+';
-                cur.x = top.begin.x;
-                cur.y = top.begin.y;
-            }
-        }
+    queue<int> qu;
+    stack<pair<int, int>> stack;
 
-        for (int i = 1; i <= n; i++)
+    used[start] = true;
+    qu.push(start);
+
+    int step[4] = {n + 2, -(n + 2), 1, -1};
+    bool success = false;
+
+    while (!qu.empty() && !success)
+    {
+        int node = qu.front();
+        qu.pop();
+
+        for (auto pr : step)
         {
-            for (int j = 1; j <= n; j++)
+            int cur = node + pr;
+            if (cur <= (n + 2) * (n + 2) && cur > 0 && !used[cur])
             {
-                cout << ms[i][j] << " ";
+                used[cur] = true;
+                qu.push(cur);
+                stack.push({node, cur});
+                if (cur == finish)
+                {
+                    success = true;
+                    break;
+                }
             }
-            cout << endl;
         }
+    }
+
+    if (!success)
+    {
+        cout << "N" << endl;
+        return;
+    }
+
+    int cur = finish;
+    ms[cur] = '+';
+    while (!stack.empty())
+    {
+        auto top = stack.top();
+        stack.pop();
+        if (top.second == cur && top.first != start)
+        {
+            ms[top.first] = '+';
+            cur = top.first;
+        }
+    }
+
+    cout << "Y" << endl;
+    for (int i = n + 3; i <= (n + 2) * (n + 2) - (n + 2); i++)
+    {
+        bool kromka = i / (n + 2) == 0 || i / (n + 2) == n + 1 || i % (n + 2) == 1 || i % (n + 2) == 0;
+        if (!kromka)
+            cout << ms[i] << " ";
+        if (i % (n + 2) == n + 1)
+            cout << endl;
     }
 }
 
