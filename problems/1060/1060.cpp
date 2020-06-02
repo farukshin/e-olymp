@@ -1,5 +1,4 @@
 //https://www.e-olymp.com/ru/problems/1060
-//#tech_debt
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -98,7 +97,7 @@ void solve()
     {
         bool kromka = i / (n + 2) == 0 || i / (n + 2) == n + 1 || i % (n + 2) == 1 || i % (n + 2) == 0;
         if (!kromka)
-            cout << ms[i] << " ";
+            cout << ms[i];
         if (i % (n + 2) == n + 1)
             cout << endl;
     }
