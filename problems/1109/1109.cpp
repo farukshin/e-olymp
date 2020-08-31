@@ -1,38 +1,39 @@
 //https://www.e-olymp.com/ru/problems/1109
-//#tech_debt
 #include <bits/stdc++.h>
 using namespace std;
 
 typedef long long ll;
 typedef long double ld;
 
-void dejkstra(const vector<vector<pair<int, ll>>>& ss, const int& countNode, const int& start, vector<ll>& dist, vector<int>& parrent) {
+void dejkstra(const vector<vector<pair<int, double>>>& ss, const int& countNode, const int& start, vector<double>& dist, vector<int>& parrent)
+{
 
     dist.resize(countNode, 0);
-    dist[start] = 1;
+    dist[start] = 1.0;
 
     parrent.resize(countNode, -1);
     parrent[0] = 0;
 
-    priority_queue< pair<ll, int>, vector<pair<ll, int>>, greater<pair<ll, int>>> q;
-    q.push(make_pair(0, start));
+    priority_queue<pair<double, int>> q;
+    q.push({ 1.0, start });
 
     while (!q.empty())
     {
         auto u = q.top();
         q.pop();
         int cur = u.second;
-        if (u.first < dist[cur])
+        double curLen = u.first;
+        if (curLen > dist[cur])
             continue;
 
         for (auto chield : ss[cur])
         {
             int to = chield.first;
-            ll len = chield.second;
+            double len = chield.second;
             if (dist[to] < dist[cur] * len)
             {
                 dist[to] = dist[cur] * len;
-                q.push(make_pair(dist[to], to));
+                q.push({ dist[to], to });
                 parrent[to] = cur;
             }
         }
@@ -44,8 +45,8 @@ void solve()
     int n, m;
     cin >> n >> m;
 
-    vector<vector<pair<int, ll>>> ss(n);
-    vector<ll> dist;
+    vector<vector<pair<int, double>>> ss(n);
+    vector<double> dist;
     vector<int> parrent;
 
     for (int i = 0; i < m; i++)
@@ -53,14 +54,15 @@ void solve()
         int a, b, p;
         cin >> a >> b >> p;
         --a, --b;
-        ss[a].push_back({ b, p / 100 });
-        ss[b].push_back({ a, p / 100 });
+        double d = 1.0 * p / 100;
+        ss[a].push_back({ b, d });
+        ss[b].push_back({ a, d });
     }
 
     int start = 0;
     dejkstra(ss, n, start, dist, parrent);
 
-    cout << dist[n] << endl;
+    printf("%f percent\n", dist[n - 1] * 100);
 }
 
 int main()
