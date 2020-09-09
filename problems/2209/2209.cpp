@@ -46,9 +46,7 @@ void solve()
     const int MAXARR = 1e6 + 1;
 
     vector<vector<pair<int, ll>>> ss(MAXARR);
-    ss[1].push_back({ n, u * (n - 1) });
-
-    int up = MAXARR, low = 0;
+    //ss[1].push_back({ n, u * (n - 1) });
 
     for (int lift = 1; lift <= l; lift++)
     {
@@ -59,19 +57,17 @@ void solve()
             int cur;
             cin >> cur;
             ss[preFlo].push_back({ cur, i + j });
-            if (cur > n && up > cur)
-                up = cur;
-            if (cur < n && low < cur)
-                low = cur;
+            //printf("from=%d to=%d cost=%d \n", preFlo, cur, i + j);
             preFlo = cur;
         }
+
     }
 
-    if (low != 0)
-        ss[low].push_back({ n, u * (n - low) });
-
-    if (up != MAXARR)
-        ss[up].push_back({ n, d * (up - n) });
+    for (int i = 0; i < MAXARR; i++)
+    {
+        ss[i].push_back({ i + 1, u });
+        ss[i + 1].push_back({ i, d });
+    }
 
     vector<ll> dist;
     dejkstra(ss, MAXARR, 1, dist);
