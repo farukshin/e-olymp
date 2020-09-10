@@ -6,14 +6,15 @@ using namespace std;
 typedef long long ll;
 typedef long double ld;
 
-void dejkstra(const vector<vector<pair<int, ll>>>& ss, const int& countNode, const int& start, vector<ll>& dist) {
+void dejkstra(const vector<vector<pair<int, int>>>& ss, const int& countNode, const int& start, vector<ll>& dist)
+{
 
     dist.resize(countNode);
     fill(dist.begin(), dist.end(), LLONG_MAX);
     dist[start] = 0;
 
-    //priority_queue< pair<ll, int>, vector<pair<ll, int>>, greater<pair<ll, int>> > q;
-    priority_queue< pair<ll, int> > q;
+    priority_queue<pair<ll, int>, vector<pair<ll, int>>, greater<pair<ll, int>>> q;
+    //priority_queue<pair<ll, int>> q;
     q.push({ 0, start });
 
     while (!q.empty())
@@ -43,37 +44,70 @@ void solve()
     int n, u, d, i, j, l;
     cin >> n >> u >> d >> i >> j >> l;
 
-    const int MAXARR = 1e6 + 1;
+    int MAXFLOOR = 0;
 
-    vector<vector<pair<int, ll>>> ss(MAXARR);
-    //ss[1].push_back({ n, u * (n - 1) });
+    vector<vector<pair<int, int>>> ss;
 
-    for (int lift = 1; lift <= l; lift++)
     {
-        int count, preFlo = 1;
-        cin >> count;
-        for (int flo = 1; flo <= count; flo++)
+        vector<vector<int>> lift(l + 1);
+        set<int> floors;
+
+        for (int liftNumber = 1; liftNumber <= l; liftNumber++)
         {
-            int cur;
-            cin >> cur;
-            ss[preFlo].push_back({ cur, i + j });
-            //printf("from=%d to=%d cost=%d \n", preFlo, cur, i + j);
-            preFlo = cur;
+            int countFlo;
+            cin >> countFlo;
+            while (countFlo--)
+            {
+                int floor;
+                cin >> floor;
+                lift[liftNumber].push_back(floor);
+                floors.insert(floor);
+                if (MAXFLOOR < floor)
+                    MAXFLOOR = floor;
+            }
         }
 
-    }
+        set<pair<int, int>> stepStairs;
 
-    for (int i = 0; i < MAXARR; i++)
-    {
-        ss[i].push_back({ i + 1, u });
-        ss[i + 1].push_back({ i, d });
+        floors.insert(1);
+        floors.insert(n);
+
+        int pre = 0;
+        for (auto fl : floors)
+        {
+            if (pre != fl && pre != 0)
+                stepStairs.insert({ pre, fl });
+            pre = fl;
+        }
+
+        MAXFLOOR = max(MAXFLOOR, n) + 1;
+        ss.resize(MAXFLOOR);
+        for (auto step : stepStairs)
+            if (step.first != step.second)
+            {
+                ss[step.first].push_back({ step.second, u * abs(step.second - step.first) });
+                ss[step.second].push_back({ step.first, d * abs(step.second - step.first) });
+            }
+
+        set<pair<int, int>> stepLift;
+        for (int liftNumber = 1; liftNumber <= l; liftNumber++)
+            for (int floNumberFrom = 0; floNumberFrom < lift[liftNumber].size() - 1; floNumberFrom++)
+                for (int floNumberTo = floNumberFrom + 1; floNumberTo < lift[liftNumber].size(); floNumberTo++)
+                    stepLift.insert({ lift[liftNumber][floNumberFrom], lift[liftNumber][floNumberTo] });
+
+        for (auto step : stepLift)
+            if (step.first != step.second)
+            {
+                ss[step.first].push_back({ step.second, i + j });
+                ss[step.second].push_back({ step.first, i + j });
+            }
+
     }
 
     vector<ll> dist;
-    dejkstra(ss, MAXARR, 1, dist);
+    dejkstra(ss, MAXFLOOR, 1, dist);
 
     cout << dist[n] << endl;
-
 }
 
 int main()
