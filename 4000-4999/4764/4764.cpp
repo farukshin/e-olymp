@@ -1,35 +1,27 @@
-//https://www.e-olymp.com/ru/problems/7365
-//#tech_debt
+//https://www.e-olymp.com/ru/problems/4764
 #include <bits/stdc++.h>
 using namespace std;
 
 typedef long long ll;
 typedef long double ld;
 
-ld cur, ves = 30.0;
-
 void solve()
 {
     int n;
     cin >> n;
 
-    if (n == 0)
-    {
-        cout << 0 << " " << 0 << endl;
-        return;
-    }
-
-    ld ans = 0;
+    int ms[n][n];
     for (int i = 0; i < n; i++)
     {
-        cin >> cur;
-        if (cur < ves)
-            ans++;
+        int ans = 0;
+        for (int j = 0; j < n; j++)
+        {
+            cin >> ms[i][j];
+            if (ms[i][j])
+                ans++;
+        }
+        cout << ans << endl;
     }
-
-    ld mol = ceil((ans * 200) / 900);
-
-    cout << mol << " " << ans << endl;
 }
 
 int main()
