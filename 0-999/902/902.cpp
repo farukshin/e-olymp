@@ -1,4 +1,4 @@
-//https://www.e-olymp.com/ru/problems/1024
+//https://www.e-olymp.com/ru/problems/902
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -7,24 +7,16 @@ typedef long double ld;
 
 void solve()
 {
-    // cout.setf(ios::fixed);
-    // cout.precision(3);
-
-
-    cout << "Hello World!" << endl;
-
-    // for (auto ch : s)
-    //     if (ch >= '0' && ch <= '9' && (ch == s[0] || ch == s[s.length() - 1]))
-    //         cout << ch;
-    // ll ans = 0;
-    // while (n)
-    // {
-    //     ans += n % 10;
-    //     n /= 10;
-    // }
-
-    //cout << n % 10 + n / 1000 << endl;
-    //cout << ans << endl;
+    int n;
+    cin >> n;
+    if (n <= 3)
+        cout << "Initial" << endl;
+    else if (n >= 4 && n <= 6)
+        cout << "Average" << endl;
+    else if (n >= 7 && n <= 9)
+        cout << "Sufficient " << endl;
+    else if (n >= 10 && n <= 12)
+        cout << "High " << endl;
 }
 
 int main()
