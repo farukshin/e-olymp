@@ -1,4 +1,4 @@
-//https://www.e-olymp.com/ru/problems/8837
+//https://www.e-olymp.com/ru/problems/8891
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -7,9 +7,14 @@ typedef long double ld;
 
 void solve()
 {
-    int a, b;
-    cin >> a >> b;
-    cout << a / b << " " << a % b << endl;
+    int n;
+    cin >> n;
+    if ((n % 2 == 0 and (n >= 0 or n % 3 != 0)) or (n % 3 == 0 and n < 0 and n % 2 != 0)) {
+        cout << "YES";
+    }
+    else {
+        cout << "NO";
+    }
 }
 
 int main()

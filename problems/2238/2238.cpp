@@ -1,4 +1,4 @@
-//https://www.e-olymp.com/ru/problems/8837
+//https://www.e-olymp.com/ru/problems/2238
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -7,9 +7,25 @@ typedef long double ld;
 
 void solve()
 {
-    int a, b;
-    cin >> a >> b;
-    cout << a / b << " " << a % b << endl;
+    int n;
+    cin >> n;
+
+    int arr[n];
+    ll sum = 0;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+        sum += arr[i];
+    }
+    ld sr = sum / n;
+    ll ans = 0;
+    for (int i = 0; i < n; i++)
+        if (arr[i] > sr)
+            ans++;
+
+
+
+    cout << ans << endl;
 }
 
 int main()

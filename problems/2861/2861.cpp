@@ -1,4 +1,4 @@
-//https://www.e-olymp.com/ru/problems/8837
+//https://www.e-olymp.com/ru/problems/2861
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -7,9 +7,20 @@ typedef long double ld;
 
 void solve()
 {
-    int a, b;
+    ll a, b, ans;
     cin >> a >> b;
-    cout << a / b << " " << a % b << endl;
+    if (a % 2 == 0)
+        a++;
+    if (b % 2 == 0)
+        b--;
+    if (a > b)
+        ans = 0;
+    else
+    {
+        ll d = 2, n = (b - a) / 2 + 1;
+        ans = (2 * a + d * (n - 1)) * n / 2;
+    }
+    cout << ans << endl;
 }
 
 int main()
