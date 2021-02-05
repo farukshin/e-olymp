@@ -16,7 +16,6 @@ load(){
 	done
 }
 
-
 for ((j=0; j<308; j+=1)); do
   echo "load page $j"
   load $j  
