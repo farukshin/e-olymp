@@ -1,0 +1,4 @@
+add 2
+subtract 5
+subtract 1
+multiply -3
