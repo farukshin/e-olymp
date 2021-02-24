@@ -19,12 +19,12 @@ void solve()
     cin >> n;
 
     vector<vector<int>> ms(n, vector<int>(n));
-    for (int i = 0;i < n;i++)
-        for (int j = 0;j < n;j++)
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < n; j++)
             cin >> ms[i][j];
 
     vector<int> color(n);
-    for (int i = 0;i < n;i++)
+    for (int i = 0; i < n; i++)
         cin >> color[i];
 
     vector<pair<int, int>> sr;

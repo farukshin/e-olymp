@@ -10,25 +10,25 @@ void solve()
     // cout.setf(std::ios::fixed);
     // cout.precision(2);
 
-	int n,m;
-	cin>>n>>m;
-	vector<vector<int>> v(n, vector<int>(m));
-	
-	for(int i=0;i<n;i++)
-		for(int j=0;j<m;j++)
-				cin>>v[i][j];
-			
-	int a,b,c,d;
-	cin>>a>>b>>c>>d;
-	--a,--b,--c,--d;
-	ll ans=0;
-	for(int i=a;i<=c;i++)
-		for(int j=b;j<=d;j++)
-				ans+=v[i][j];
-				
-	
-    cout<<ans<<endl;
-    	
+    int n, m;
+    cin >> n >> m;
+    vector<vector<int>> v(n, vector<int>(m));
+
+    for(int i = 0; i < n; i++)
+        for(int j = 0; j < m; j++)
+            cin >> v[i][j];
+
+    int a, b, c, d;
+    cin >> a >> b >> c >> d;
+    --a, --b, --c, --d;
+    ll ans = 0;
+    for(int i = a; i <= c; i++)
+        for(int j = b; j <= d; j++)
+            ans += v[i][j];
+
+
+    cout << ans << endl;
+
 }
 
 int main()

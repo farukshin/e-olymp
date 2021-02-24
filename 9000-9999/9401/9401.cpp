@@ -11,35 +11,35 @@ void solve()
     // cout.precision(2);
 
     int n;
-    cin>>n;
+    cin >> n;
     //n=n*2-1;
-    
+
     vector<vector<char>> v(n, vector<char>(n, ' '));
-    
-    for(int i=0;i<n;i++)
-    for(int j=0;j<n;j++)
-    	{
-    		if(i<=n-1-j)
-    			v[i][j]='*';
-    		//v[0][i]='*';
-    		//v[n-1][i]='*';
-    		//v[i][0]='*';
-    		//v[i][m-1]='*';
-    		//if(i!=0 || i!=n-1)
-    		//	v[i][i]='*', v[i][n-1-i]='*';
-    	}
-    	
-    
-    
-    for(int i=0;i<n;i++)
-    	{
-    		for(int j=0;j<n;j++)
-    			cout << v[i][j]<<(j==n-1?"":"");
-    		cout<<endl;
-    	}
-    		
+
+    for(int i = 0; i < n; i++)
+        for(int j = 0; j < n; j++)
+        {
+            if(i <= n - 1 - j)
+                v[i][j] = '*';
+            //v[0][i]='*';
+            //v[n-1][i]='*';
+            //v[i][0]='*';
+            //v[i][m-1]='*';
+            //if(i!=0 || i!=n-1)
+            //	v[i][i]='*', v[i][n-1-i]='*';
+        }
+
+
+
+    for(int i = 0; i < n; i++)
+    {
+        for(int j = 0; j < n; j++)
+            cout << v[i][j] << (j == n - 1 ? "" : "");
+        cout << endl;
+    }
+
     //cout << c/(a-b)<< endl;
-    
+
 }
 
 int main()

@@ -6,7 +6,8 @@ typedef long long ll;
 typedef long double ld;
 
 
-void dejkstra(const vector<vector<pair<int, ll>>>& ss, const int& countNode, const int& start, vector<ll>& dist, vector<int>& parrent) {
+void dejkstra(const vector<vector<pair<int, ll>>>& ss, const int& countNode, const int& start, vector<ll>& dist, vector<int>& parrent)
+{
 
     dist.resize(countNode);
     fill(dist.begin(), dist.end(), LLONG_MAX);
@@ -51,7 +52,7 @@ void solve()
     --start, --finish;
     vector<vector<pair<int, ll>>> ss(n);
 
-    for (int i = 0; i < m;i++)
+    for (int i = 0; i < m; i++)
     {
         int a, b;
         ll c;
@@ -84,7 +85,8 @@ void solve()
         st.push(cur);
     }
 
-    while (!st.empty()) {
+    while (!st.empty())
+    {
         cout << st.top() + 1 << " ";
         st.pop();
     }

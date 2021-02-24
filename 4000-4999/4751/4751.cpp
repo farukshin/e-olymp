@@ -10,20 +10,20 @@ void solve()
     //cout.setf(std::ios::fixed);
     //cout.precision(4);
 
-	int n;
-	cin>>n;
-	
-	vector<vector<int>> v(n, vector<int>(n));
-	for(int i=0;i<n;i++)
-		for(int j=0;j<n;j++)
-			cin>>v[i][j];
-	
-	ll s1=0,s2=0;
-	for(int i=0;i<n;i++)
-		s1+= v[i][i], s2+=v[i][n-1-i];
-	
-	cout<<s1<<" "<<s2<<endl;
-	
+    int n;
+    cin >> n;
+
+    vector<vector<int>> v(n, vector<int>(n));
+    for(int i = 0; i < n; i++)
+        for(int j = 0; j < n; j++)
+            cin >> v[i][j];
+
+    ll s1 = 0, s2 = 0;
+    for(int i = 0; i < n; i++)
+        s1 += v[i][i], s2 += v[i][n - 1 - i];
+
+    cout << s1 << " " << s2 << endl;
+
 }
 
 int main()

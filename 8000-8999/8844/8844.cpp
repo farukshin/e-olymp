@@ -10,7 +10,7 @@ void solve()
     ll n;
     cin >> n;
     string s = to_string(n);
-    s = s.substr(0, s.size()-2) + s.substr(s.size()-1, 1);
+    s = s.substr(0, s.size() - 2) + s.substr(s.size() - 1, 1);
     cout << s << endl;
 }
 

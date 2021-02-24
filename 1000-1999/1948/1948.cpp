@@ -42,7 +42,7 @@ void solve()
     cin >> n >> m;
 
     vector<vector<int>> ss(n);
-    for (int i = 0;i < m;i++)
+    for (int i = 0; i < m; i++)
     {
         int a, b;
         cin >> a >> b;

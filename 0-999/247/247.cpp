@@ -19,7 +19,7 @@ void solve()
         if (cur & (1 << 1))
             ans++;
     }
-    
+
     cout << ans << endl;
 }
 

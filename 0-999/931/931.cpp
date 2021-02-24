@@ -14,7 +14,8 @@ void solve()
     cin >> s;
 
     ld p = 1, sum = 0, ans = 0;
-    for (auto ch : s) {
+    for (auto ch : s)
+    {
         p *= ch - '0';
         sum += ch - '0';
     }

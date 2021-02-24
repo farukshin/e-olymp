@@ -20,7 +20,8 @@ void da_plus(vector<int>& a, vector<int>& b)
 {
     int carry = 0;
     const int base = 1000 * 1000 * 1000;
-    for (size_t i = 0; i < max(a.size(), b.size()) || carry; ++i) {
+    for (size_t i = 0; i < max(a.size(), b.size()) || carry; ++i)
+    {
         if (i == a.size())
             a.push_back(0);
         a[i] += carry + (i < b.size() ? b[i] : 0);
@@ -33,7 +34,8 @@ void da_minus(vector<int>& a, vector<int>& b)
 {
     int carry = 0;
     const int base = 1000 * 1000 * 1000;
-    for (size_t i = 0; i < b.size() || carry; ++i) {
+    for (size_t i = 0; i < b.size() || carry; ++i)
+    {
         a[i] -= carry + (i < b.size() ? b[i] : 0);
         carry = a[i] < 0;
         if (carry)  a[i] += base;

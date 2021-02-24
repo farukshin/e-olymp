@@ -12,7 +12,7 @@ void solve()
     int n;
     cin >> n;
     map<int, int> maps;
-    for (int i = 0;i < n;i++)
+    for (int i = 0; i < n; i++)
     {
         int cur;
         cin >> cur;

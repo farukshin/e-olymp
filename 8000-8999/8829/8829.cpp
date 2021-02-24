@@ -12,7 +12,7 @@ void solve()
 
     ld x;
     cin >> x;
-    ld y = 2*x/sqrt(x*x+1) - sqrt(x*x+1)/(x*x*x);
+    ld y = 2 * x / sqrt(x * x + 1) - sqrt(x * x + 1) / (x * x * x);
 
     cout << y << endl;
 }

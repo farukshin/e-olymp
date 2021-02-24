@@ -13,7 +13,7 @@ void solve()
     ll x, y;
     cin >> x >> y;
 
-    cout << (x *y > 0 ? "1" : "0") << endl;
+    cout << (x * y > 0 ? "1" : "0") << endl;
 }
 
 int main()

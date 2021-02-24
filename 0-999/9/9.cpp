@@ -10,7 +10,8 @@ void solve()
     // cout.setf(std::ios::fixed);
     // cout.precision(2);
 
-    int n; cin >> n;
+    int n;
+    cin >> n;
 
     if (n == 1)
         cout << 10 << ' ' << 0;

@@ -20,8 +20,8 @@ void solve()
     cin >> n;
 
     vector<vector<int>> ms(n);
-    for (int i = 0;i < n;i++)
-        for (int j = 0;j < n;j++)
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < n; j++)
         {
             int cur;
             cin >> cur;
@@ -31,9 +31,9 @@ void solve()
 
     Floyd_Warshall(ms, n);
 
-    for (int i = 0;i < n;i++)
+    for (int i = 0; i < n; i++)
     {
-        for (int j = 0;j < n;j++)
+        for (int j = 0; j < n; j++)
             cout << ms[i][j] << " ";
         cout << endl;
     }

@@ -9,19 +9,19 @@ void solve()
 {
     // cout.setf(ios::fixed);
     // cout.precision(2);
-    
-    int n,k;
-    cin>>n>>k;
+
+    int n, k;
+    cin >> n >> k;
     k++;
-    int ans = 0, sl=0;
+    int ans = 0, sl = 0;
     while(n)
     {
-    	ans++;
-    	sl += n%k;
-    	n /= k;
+        ans++;
+        sl += n % k;
+        n /= k;
     }
-    cout<< ans+1 <<" "<< sl << endl; 
-	
+    cout << ans + 1 << " " << sl << endl;
+
 }
 
 int main()

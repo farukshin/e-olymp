@@ -19,7 +19,8 @@ void solve()
     {
         ll s = n;
         int sum = 0;
-        while (s) {
+        while (s)
+        {
             sum += s % 10;
             s /= 10;
         }

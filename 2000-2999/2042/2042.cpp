@@ -13,11 +13,13 @@ void solve()
     int n;
     cin >> n;
 
-    map<int, string> mp = {
+    map<int, string> mp =
+    {
         {1, "First"},
         {2, "Second"},
         {3, "Third"},
-        {4, "Fourth"}};
+        {4, "Fourth"}
+    };
 
     int ans = n / 3 + (n % 3 == 0 ? 0 : 1);
 

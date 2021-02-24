@@ -12,15 +12,15 @@ void solve()
 
     vector<int> v;
     int cur;
-    while(cin>>cur)
-       	v.push_back(cur);
-    
+    while(cin >> cur)
+        v.push_back(cur);
+
     reverse(v.begin(), v.end());
-    
-    for(auto s:v)
-    	cout<< s<<" ";
-    cout<<endl;
-    
+
+    for(auto s : v)
+        cout << s << " ";
+    cout << endl;
+
 }
 
 int main()

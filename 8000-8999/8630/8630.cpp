@@ -12,13 +12,13 @@ void solve()
 
     string s;
     cin >> s;
-    int ans=0;
+    int ans = 0;
 
     for (auto ch : s)
         if (ch >= '0' && ch <= '9')
-            if(ans< (ch - '0'))
-            	ans = (ch - '0');
-            
+            if(ans < (ch - '0'))
+                ans = (ch - '0');
+
     cout << ans << endl;
 }
 

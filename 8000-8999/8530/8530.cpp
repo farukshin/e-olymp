@@ -22,7 +22,7 @@ void solve()
     for (int i = 0; i < a; i++)
     {
         for (int j = 0; j < b; j++)
-            cout << arr[i][j]<<" ";
+            cout << arr[i][j] << " ";
         cout << endl;
     }
 }

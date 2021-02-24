@@ -14,8 +14,8 @@ void solve()
     cin >> n;
     vector<vector<int>> ms(n, vector<int>(n, 0));
     bool fl = false;
-    for (int i = 0;i < n;i++)
-        for (int j = 0;j < n;j++)
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < n; j++)
         {
             cin >> ms[i][j];
             if (i == j && ms[i][j] != 0)

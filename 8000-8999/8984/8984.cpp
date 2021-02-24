@@ -12,7 +12,7 @@ void solve()
     getline(cin, s);
     ll ans = 0;
 
-    for (ll i = 0; i < s.size() - 1;i++)
+    for (ll i = 0; i < s.size() - 1; i++)
     {
         char ch = s[i];
         char ch2 = s[i + 1];

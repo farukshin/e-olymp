@@ -12,7 +12,7 @@ void solve()
 
     ld x, y;
     cin >> x >> y;
-    ld ans = (x - y)*(x - y) / sqrt(x * x + y * y - 1) + sqrt(x * x + y * y - 1) / (2 * x * y);
+    ld ans = (x - y) * (x - y) / sqrt(x * x + y * y - 1) + sqrt(x * x + y * y - 1) / (2 * x * y);
 
     cout << ans << endl;
 }

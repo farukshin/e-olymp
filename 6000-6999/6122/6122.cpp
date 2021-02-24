@@ -35,13 +35,13 @@ void solve()
             // if (st.empty())
             //     cout << "error" << endl;
             // else
-                cout << st.top() << endl, st.pop();
+            cout << st.top() << endl, st.pop();
         }
         else if (s == "back")
             // if (st.empty())
             //     cout << "error" << endl;
             // else
-                cout << st.top() << endl;
+            cout << st.top() << endl;
         else if (s == "clear")
         {
             while (!st.empty())

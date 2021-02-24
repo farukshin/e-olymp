@@ -16,12 +16,12 @@ void solve()
     cin >> n;
     vector<int> v(n);
 
-    for (int i = 0;i < n;i++)
+    for (int i = 0; i < n; i++)
         cin >> v[i];
     sort(v.begin(), v.end(), greater<int>());
 
-    for (int i = 0;i < n;i++)
-        cout << v[i]<<" ";
+    for (int i = 0; i < n; i++)
+        cout << v[i] << " ";
     //cout << gcd(n, m) << endl;;
 
 }

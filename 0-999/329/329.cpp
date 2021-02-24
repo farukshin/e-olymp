@@ -10,29 +10,29 @@ void solve()
     // cout.setf(std::ios::fixed);
     // cout.precision(2);
 
-	string s;
-	getline(cin,s);
-	int ans =0;
-	bool world = false;
-	
-	for(int i=0; i < s.size(); i++)
-		{
-			auto ch = s[i];
-			char pre = (i!=0?s[i-1]:'$'), sled = (i!=s.size()-1?s[i+1]:'$');
-			if(ch==' ' && world)
-				world = false;
-			else if(ch==' ' && !world)
-				continue;
-			else if(ch!=' ' && world)
-				continue;
-			else if(ch=='-' && pre==' ' && sled==' ')
-				continue;
-			else if(ch!=' ' && !world)
-				world = true, ans++;
-		}
-		
-	cout<<ans<<endl;
-    
+    string s;
+    getline(cin, s);
+    int ans = 0;
+    bool world = false;
+
+    for(int i = 0; i < s.size(); i++)
+    {
+        auto ch = s[i];
+        char pre = (i != 0 ? s[i - 1] : '$'), sled = (i != s.size() - 1 ? s[i + 1] : '$');
+        if(ch == ' ' && world)
+            world = false;
+        else if(ch == ' ' && !world)
+            continue;
+        else if(ch != ' ' && world)
+            continue;
+        else if(ch == '-' && pre == ' ' && sled == ' ')
+            continue;
+        else if(ch != ' ' && !world)
+            world = true, ans++;
+    }
+
+    cout << ans << endl;
+
 }
 
 int main()

@@ -15,8 +15,8 @@ void solve()
     char arr[n][n];
     bool  used[n][n] = { false };
     int ans = 0;
-    for (int i = 0;i < n;i++)
-        for (int j = 0;j < n;j++)
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < n; j++)
         {
             cin >> arr[i][j];
             if (arr[i][j] == '*')
@@ -29,7 +29,7 @@ void solve()
     --a, --b;
 
     queue<pair<int, int>> q;
-    q.push({ a,b });
+    q.push({ a, b });
 
     while (!q.empty())
     {

@@ -19,7 +19,8 @@ void solve()
     {
         ans++;
         n /= 10;
-    } while (n != 0);
+    }
+    while (n != 0);
     cout << ans << endl;
 }
 

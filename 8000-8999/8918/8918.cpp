@@ -11,7 +11,7 @@ void solve()
     ll n;
     cin >> n;
 
-    for (ll i = 1;i <= n;i++)
+    for (ll i = 1; i <= n; i++)
         cout << i * i << " ";
 
 

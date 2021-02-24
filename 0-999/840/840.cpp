@@ -20,7 +20,8 @@ void da_plus(vector<int>& a, vector<int>& b)
 {
     int carry = 0;
     const int base = 1000 * 1000 * 1000;
-    for (size_t i = 0; i < max(a.size(), b.size()) || carry; ++i) {
+    for (size_t i = 0; i < max(a.size(), b.size()) || carry; ++i)
+    {
         if (i == a.size())
             a.push_back(0);
         a[i] += carry + (i < b.size() ? b[i] : 0);
@@ -40,14 +41,14 @@ void solve()
     //cout.setf(std::ios::fixed);
     //cout.precision(4);
 
-	string s1,s2;
-	cin>>s1>>s2;
-	
-	vector<int> a,b;
-	da_read(s1,a);
-	da_read(s2,b);
-	da_plus(a,b);
-	da_print(a);
+    string s1, s2;
+    cin >> s1 >> s2;
+
+    vector<int> a, b;
+    da_read(s1, a);
+    da_read(s2, b);
+    da_plus(a, b);
+    da_print(a);
 }
 
 int main()

@@ -13,7 +13,8 @@ void solve()
     int n;
     cin >> n;
     int ans = 0;
-    while (n--) {
+    while (n--)
+    {
         int a;
         ld b;
         cin >> a >> b;

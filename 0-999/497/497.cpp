@@ -36,7 +36,7 @@ int main()
     //freopen("output-1.txt", "w", stdout);
 #endif
 
-   //solve();
+    //solve();
     int t;
     cin >> t;
     while (t--)

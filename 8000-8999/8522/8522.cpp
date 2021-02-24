@@ -9,14 +9,14 @@ void solve()
 {
     // cout.setf(ios::fixed);
     // cout.precision(2);
-    
-    int a,b;
-    cin>>a>>b;
-    if(a%b==0)
-    	cout <<"Divisible" <<endl;
+
+    int a, b;
+    cin >> a >> b;
+    if(a % b == 0)
+        cout << "Divisible" << endl;
     else
-    	cout<< a/b<<" "<<a%b << endl; 
-	
+        cout << a / b << " " << a % b << endl;
+
 }
 
 int main()

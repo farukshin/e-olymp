@@ -11,7 +11,7 @@ void solve()
     cin >> n >> m >> k;
 
     vector<int> ans(n);
-    for (int i = 0; i < m + k;i++)
+    for (int i = 0; i < m + k; i++)
     {
         int cur;
         cin >> cur;

@@ -16,12 +16,12 @@ void solve()
 
     vector<vector<ll>> v(n + 2, vector<ll>(m + 2, 0)), dp(n + 2, vector<ll>(m + 2, 0));
 
-    for (int i = 1;i <= n;i++)
-        for (int j = 1;j <= m;j++)
+    for (int i = 1; i <= n; i++)
+        for (int j = 1; j <= m; j++)
             cin >> v[i][j];
 
-    for (int i = n;i >= 1;i--)
-        for (int j = 1;j <= m;j++)
+    for (int i = n; i >= 1; i--)
+        for (int j = 1; j <= m; j++)
             dp[i][j] = v[i][j] + max(dp[i + 1][j], dp[i][j - 1]);
 
 

@@ -12,35 +12,35 @@ void solve()
 
     int n;
     cin >> n;
-    vector<vector<int>> v(n, vector<int>(n,0));
-    
-    int i=0, j=0, k=1, curLine=0;
-    bool left=true, newLine = true;
-    
+    vector<vector<int>> v(n, vector<int>(n, 0));
+
+    int i = 0, j = 0, k = 1, curLine = 0;
+    bool left = true, newLine = true;
+
     while(true)
     {
-    	v[i][j] = k;
-    	k++;
-    	curLine++;
-    	
-    	if(curLine == n)
-    		i++, left = !left , newLine = true, curLine=0;
-    	else 
-    		j+= (left?1:-1), newLine = false;
-    		
-    	if(i==n && curLine == 0)
-    		break;
-    	
-    }
-    
-    for(int i =0;i <n;i++)
-    	{
-    		for(int j =0;j <n;j++)
-    			cout<<v[i][j]<<" ";
-    		cout<<endl;
-    	}
+        v[i][j] = k;
+        k++;
+        curLine++;
 
-    
+        if(curLine == n)
+            i++, left = !left, newLine = true, curLine = 0;
+        else
+            j += (left ? 1 : -1), newLine = false;
+
+        if(i == n && curLine == 0)
+            break;
+
+    }
+
+    for(int i = 0; i < n; i++)
+    {
+        for(int j = 0; j < n; j++)
+            cout << v[i][j] << " ";
+        cout << endl;
+    }
+
+
 }
 
 int main()

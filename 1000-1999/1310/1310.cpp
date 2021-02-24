@@ -38,7 +38,7 @@ void solve()
 
     int ans = -1;
     for (int i = 0; i < z.size(); i++)
-        if(z[i]> ans)
+        if(z[i] > ans)
             ans = z[i];
 
     cout << ans << endl;

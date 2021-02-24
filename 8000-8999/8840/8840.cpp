@@ -11,7 +11,7 @@ void solve()
     ll n;
     cin >> n;
 
-    cout << n% 10<< endl;
+    cout << n % 10 << endl;
 
 
 

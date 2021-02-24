@@ -10,13 +10,13 @@ void solve()
     // cout.setf(std::ios::fixed);
     // cout.precision(2);
 
-    int a,b,c;
-    cin>>a>>b>>c;
-    
-    
-    
-    cout << c/(a-b)<< endl;
-    
+    int a, b, c;
+    cin >> a >> b >> c;
+
+
+
+    cout << c / (a - b) << endl;
+
 }
 
 int main()

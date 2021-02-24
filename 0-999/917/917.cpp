@@ -10,7 +10,8 @@ void solve()
     int n;
     cin >> n;
     ld min = 105;
-    while (n--) {
+    while (n--)
+    {
         ld cur;
         cin >> cur;
         if (cur < min)

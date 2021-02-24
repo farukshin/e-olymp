@@ -12,10 +12,10 @@ void solve()
 
 
     cout << 1 << endl
-        << 2 << endl
-        << 3 << endl
-        << 4 << endl
-        << 5 << endl;
+         << 2 << endl
+         << 3 << endl
+         << 4 << endl
+         << 5 << endl;
     // for (auto ch : s)
     //     if (ch >= '0' && ch <= '9' && (ch == s[0] || ch == s[s.length() - 1]))
     //         cout << ch;

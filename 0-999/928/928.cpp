@@ -13,7 +13,8 @@ void solve()
     int n;
     cin >> n;
     int min = 105, max = -105;
-    while (n--) {
+    while (n--)
+    {
         int a;
         cin >> a;
         if (a > max)

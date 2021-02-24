@@ -10,19 +10,19 @@ void solve()
     // cout.setf(std::ios::fixed);
     // cout.precision(2);
 
-    int ans=1, cur =0;
-    int n,k;
-    cin>>n>>k;
-    for(cur = 1; cur<=n; cur++)
-    	{
-    		if(ans>k)
-    			ans-=k;
-    		ans *=2;
-    	}
-    
-    
+    int ans = 1, cur = 0;
+    int n, k;
+    cin >> n >> k;
+    for(cur = 1; cur <= n; cur++)
+    {
+        if(ans > k)
+            ans -= k;
+        ans *= 2;
+    }
+
+
     cout << ans << endl;
-    
+
 }
 
 int main()

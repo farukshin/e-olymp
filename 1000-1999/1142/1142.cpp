@@ -12,7 +12,7 @@ void solve()
     // cout.precision(2);
     ll a, b;
     cin >> a >> b;
-    cout << (b==0 || a % b != 0 ? "ERROR" : to_string(a / b)) << endl;
+    cout << (b == 0 || a % b != 0 ? "ERROR" : to_string(a / b)) << endl;
 
 }
 

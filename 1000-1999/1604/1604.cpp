@@ -19,7 +19,7 @@ void solve()
 
     bool succes = false;
     ll ans = 1;
-    for (int i = 0;i < s.size();i++)
+    for (int i = 0; i < s.size(); i++)
     {
         auto ch = s[i];
         if (ch >= '0' && ch <= '9' && (ch - '0') % 2 == 0)

@@ -10,18 +10,18 @@ void solve()
     // cout.setf(std::ios::fixed);
     // cout.precision(2);
 
-	int a,b;
-	cin>>a>>b;
-	
-	for(int i = a ; i<= b ; i++)
-		{
-			int x = i/100;
-			int y = (i/10)%10;
-			int z = i%10;
-			if(x!=y && x!=z && y!=z)
-				cout<<i<<endl;
-		}
-    
+    int a, b;
+    cin >> a >> b;
+
+    for(int i = a ; i <= b ; i++)
+    {
+        int x = i / 100;
+        int y = (i / 10) % 10;
+        int z = i % 10;
+        if(x != y && x != z && y != z)
+            cout << i << endl;
+    }
+
 }
 
 int main()

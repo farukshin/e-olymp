@@ -10,14 +10,14 @@ void solve()
     // cout.setf(std::ios::fixed);
     // cout.precision(2);
 
-	string s1,s2;
-	getline(cin,s1);
-	getline(cin,s2);
-	if(s1.length()<s2.length())
-		cout<<"no";
-	else
-		cout<<"go";
-    
+    string s1, s2;
+    getline(cin, s1);
+    getline(cin, s2);
+    if(s1.length() < s2.length())
+        cout << "no";
+    else
+        cout << "go";
+
 }
 
 int main()

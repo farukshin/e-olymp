@@ -14,7 +14,7 @@ void solve()
     cin >> x >> y;
     ll ans = min(x, y);
     //cout << (ans == 0 ? "1" : "0") << endl;
-    cout << min(x,y)<< " "<<max(x,y) << endl;
+    cout << min(x, y) << " " << max(x, y) << endl;
 }
 
 int main()

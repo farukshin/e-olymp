@@ -14,25 +14,25 @@ void solve()
     cin >> n;
 
     vector<int> v(n);
-    ll sum=0, winner=0, winCost = -1, kol=0;
-    
-    for (int i=0;i<n;i++)
-        {
-        	cin>>v[i];
-        	if(v[i] > winCost)
-        		winCost = v[i], kol=1, winner = i+1;
-        	else if(v[i]==winCost)
-        		kol++, winner = i+1;
-        	sum+= v[i];
-        }
+    ll sum = 0, winner = 0, winCost = -1, kol = 0;
 
-	if(kol>1 || kol ==0)
-    	cout << "no winner" << endl;
-    else if(sum/2 < winCost)
-    	cout << "majority winner " << winner << endl;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> v[i];
+        if(v[i] > winCost)
+            winCost = v[i], kol = 1, winner = i + 1;
+        else if(v[i] == winCost)
+            kol++, winner = i + 1;
+        sum += v[i];
+    }
+
+    if(kol > 1 || kol == 0)
+        cout << "no winner" << endl;
+    else if(sum / 2 < winCost)
+        cout << "majority winner " << winner << endl;
     else
-    	cout << "minority winner " << winner << endl;
-    
+        cout << "minority winner " << winner << endl;
+
 }
 
 int main()
@@ -45,7 +45,9 @@ int main()
 #endif
 
     //solve();
-    int t; cin >> t; while (t--) solve();
+    int t;
+    cin >> t;
+    while (t--) solve();
 
     return 0;
 }

@@ -13,7 +13,7 @@ void solve()
     int arr[n];
 
     int minimum = 105, ind;
-    for (int i = 0; i < n;i++)
+    for (int i = 0; i < n; i++)
     {
         cin >> arr[i];
         if (arr[i] < minimum)
@@ -23,7 +23,7 @@ void solve()
     int cur = arr[ind];
     arr[ind] = arr[0];
     arr[0] = cur;
-    for (int i = 0; i < n;i++)
+    for (int i = 0; i < n; i++)
         cout << arr[i] << " ";
     cout << endl;
 

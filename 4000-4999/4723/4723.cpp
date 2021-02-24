@@ -21,7 +21,7 @@ void solve()
         mp[cur]++;
     }
 
-    
+
     cout << mp[0] << endl;
 }
 

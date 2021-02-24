@@ -11,29 +11,34 @@ void solve()
     // cout.precision(0);
     int n;
     cin >> n ;
-    vector<vector<int>> v(n, vector<int>(n,0));
-    
+    vector<vector<int>> v(n, vector<int>(n, 0));
+
     for(int i = 0; i < n; i++)
-    	for(int j = 0; j < n; j++)
-        	cin>>v[i][j];
-    	
-	
-	
-	for(int i = 0; i < n; i++) {
-        for(int j = 0; j < n; j++) {
-            if(v[i][j]) { 
-                for(int z = 0; z < n; z++) {
-                    if(v[j][z] && !v[i][z]) { 
+        for(int j = 0; j < n; j++)
+            cin >> v[i][j];
+
+
+
+    for(int i = 0; i < n; i++)
+    {
+        for(int j = 0; j < n; j++)
+        {
+            if(v[i][j])
+            {
+                for(int z = 0; z < n; z++)
+                {
+                    if(v[j][z] && !v[i][z])
+                    {
                         cout << "NO";
                         return;
-                    }   
-                }   
+                    }
+                }
             }
         }
     }
     cout << "YES";
-	
-    
+
+
     //cout << ans << endl;
 }
 

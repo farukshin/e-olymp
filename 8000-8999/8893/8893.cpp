@@ -9,10 +9,12 @@ void solve()
 {
     int n;
     cin >> n;
-    if (abs(n) >= 10 && abs(n) < 100 && n % 6 == 0) {
+    if (abs(n) >= 10 && abs(n) < 100 && n % 6 == 0)
+    {
         cout << "YES";
     }
-    else {
+    else
+    {
         cout << "NO";
     }
 }

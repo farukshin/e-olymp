@@ -8,7 +8,8 @@ typedef long double ld;
 void solve()
 {
     int a, b;
-    while (cin >> a >> b) {
+    while (cin >> a >> b)
+    {
         cout << a + b << endl;
     }
 }

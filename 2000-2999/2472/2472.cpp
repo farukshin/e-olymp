@@ -13,7 +13,8 @@ void solve()
 
     vector<set<int>> ss(n + 1);
 
-    while (k--) {
+    while (k--)
+    {
         int a, b, c;
         cin >> a >> b;
         if (a == 1)

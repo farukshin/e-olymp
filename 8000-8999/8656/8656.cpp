@@ -21,7 +21,7 @@ void solve()
     int a, b;
     vector<pair<int, int>> v;
     while (cin >> a >> b)
-        v.push_back({ a,b });
+        v.push_back({ a, b });
 
     sort(v.begin(), v.end(), mySort);
     for (auto p : v)

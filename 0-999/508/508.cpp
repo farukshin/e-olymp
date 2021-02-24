@@ -9,37 +9,37 @@ void solve()
 {
     // cout.setf(std::ios::fixed);
     // cout.precision(2);
-	
-	string s;
-	while(cin>>s)
-	{
-		//cout<<s<<endl;
-		bool reg = false;
-		int cVop =0, cZv=0;
-		for(auto ch:s)
-		{
-			bool chReg = (ch=='?' || ch=='*');
-			if(!chReg && reg)
-				{
-					cout<< (cZv>0?"*":"")<<string(cVop, '?');
-					cZv =0, cVop = 0;
-					reg = false;
-					cout<<ch;
-					
-				}
-			else if(!chReg && !reg)
-				cout<<ch;
-			else if(chReg)
-			{
-				reg = true;
-				cVop += (ch =='?'?1:0);
-				cZv += (ch =='*'?1:0);
-			}
-			
-		}
-		cout<< (cZv>0?"*":"")<<string(cVop, '?');
-		cout<<endl;
-	}
+
+    string s;
+    while(cin >> s)
+    {
+        //cout<<s<<endl;
+        bool reg = false;
+        int cVop = 0, cZv = 0;
+        for(auto ch : s)
+        {
+            bool chReg = (ch == '?' || ch == '*');
+            if(!chReg && reg)
+            {
+                cout << (cZv > 0 ? "*" : "") << string(cVop, '?');
+                cZv = 0, cVop = 0;
+                reg = false;
+                cout << ch;
+
+            }
+            else if(!chReg && !reg)
+                cout << ch;
+            else if(chReg)
+            {
+                reg = true;
+                cVop += (ch == '?' ? 1 : 0);
+                cZv += (ch == '*' ? 1 : 0);
+            }
+
+        }
+        cout << (cZv > 0 ? "*" : "") << string(cVop, '?');
+        cout << endl;
+    }
 }
 
 int main()

@@ -19,7 +19,7 @@ ll sumNum(string s)
 ll sumNum1(string s)
 {
     ll res = 0;
-    for (int i = 0;i < s.size();i++)
+    for (int i = 0; i < s.size(); i++)
     {
         char ch = s[i];
         if (ch >= '0' && ch <= '9' && i % 2 == 1)
@@ -32,7 +32,7 @@ ll sumNum1(string s)
 ll sumNum0(string s)
 {
     ll res = 0;
-    for (int i = 0;i < s.size();i++)
+    for (int i = 0; i < s.size(); i++)
     {
         char ch = s[i];
         if (ch >= '0' && ch <= '9' && i % 2 == 0)
@@ -44,7 +44,7 @@ ll sumNum0(string s)
 
 int lastNum(string s)
 {
-    for (int i = s.size() - 1;i >= 0;i--)
+    for (int i = s.size() - 1; i >= 0; i--)
         if (s[i] >= '0' && s[i] <= '9')
             return (s[i] - '0');
 

@@ -10,7 +10,7 @@ void solve()
     // cout.setf(std::ios::fixed);
     // cout.precision(2);
 
-    ll a,ans;
+    ll a, ans;
     cin >> a;
     ans = -a;
 

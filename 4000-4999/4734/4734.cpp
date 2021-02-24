@@ -18,7 +18,7 @@ ll sumNum(string s)
 
 int lastNum(string s)
 {
-    for (int i = s.size() - 1;i >= 0;i--)
+    for (int i = s.size() - 1; i >= 0; i--)
         if (s[i] >= '0' && s[i] <= '9')
             return (s[i] - '0');
 
@@ -36,8 +36,8 @@ void solve()
     ll sum = sumNum(s);
 
     cout << (sum % 3 == 0 ? "Yes" : "No") << endl
-        << ((sum % 3 == 0) && (last % 2 == 0) ? "Yes" : "No") << endl
-        << (sum % 9 == 0 ? "Yes" : "No") << endl;
+         << ((sum % 3 == 0) && (last % 2 == 0) ? "Yes" : "No") << endl
+         << (sum % 9 == 0 ? "Yes" : "No") << endl;
 }
 
 int main()

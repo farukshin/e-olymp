@@ -19,8 +19,8 @@ void solve()
         n = stoi(s);
 
     cout << (n % 2 == 0 ? "Yes" : "No") << endl
-        << (n % 4 == 0 ? "Yes" : "No") << endl
-        << (n % 8 == 0 ? "Yes" : "No") << endl;
+         << (n % 4 == 0 ? "Yes" : "No") << endl
+         << (n % 8 == 0 ? "Yes" : "No") << endl;
 }
 
 int main()

@@ -5,7 +5,8 @@ using namespace std;
 typedef long long ll;
 typedef long double ld;
 
-long factorial(int a) {
+long factorial(int a)
+{
     if (a == 0)
         return 1;
     else

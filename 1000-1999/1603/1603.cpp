@@ -11,7 +11,7 @@ void solve()
     // cout.precision(2);
 
     int n;
-    ll sum=0;
+    ll sum = 0;
     cin >> n;
     string s = to_string(n);
     for (auto ch : s)

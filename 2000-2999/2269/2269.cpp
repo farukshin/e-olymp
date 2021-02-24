@@ -13,7 +13,8 @@ void bfs_compSv(vector<vector<int>>& ss, const int countNode, vector<int>& compS
     countCompSv = 0;
 
     for (int i = 0; i < countNode; i++)
-        if (!used[i]) {
+        if (!used[i])
+        {
             countCompSv++;
             queue<int> q;
             q.push(i);
@@ -41,8 +42,8 @@ void solve()
     cin >> n;
 
     vector<vector<int>> ss(n);
-    for (int i = 0;i < n;i++)
-        for (int j = 0;j < n;j++)
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < n; j++)
         {
             int cur;
             cin >> cur;

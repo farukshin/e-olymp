@@ -12,7 +12,8 @@ void solve()
     int n;
     cin >> n;
     ld max = 0;
-    while (n--) {
+    while (n--)
+    {
         ld cur;
         cin >> cur;
         if (abs(cur) > max)

@@ -19,12 +19,12 @@ void solve()
     }
 
     cout << s[1] << s[3] << s[9] << endl
-        << s[0] << s[1] << s[s.length() - 1] << endl
-        << s.substr(s.length() - 5) << endl
-        << s.substr(0, s.length() - 4) << endl
-        << s2 << endl
-        << s2.length() << endl
-        << sRev << endl;
+         << s[0] << s[1] << s[s.length() - 1] << endl
+         << s.substr(s.length() - 5) << endl
+         << s.substr(0, s.length() - 4) << endl
+         << s2 << endl
+         << s2.length() << endl
+         << sRev << endl;
 }
 
 int main()

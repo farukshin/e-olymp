@@ -10,9 +10,10 @@ vector<char> cl;
 vector<int> p;
 int cycle_st, cycle_end;
 
-void read_ss(vector<vector<int>>& ss, const int& m, const bool& orient = true) {
+void read_ss(vector<vector<int>>& ss, const int& m, const bool& orient = true)
+{
 
-    for (int i = 0;i < m;i++)
+    for (int i = 0; i < m; i++)
     {
         int a, b;
         cin >> a >> b;
@@ -24,10 +25,11 @@ void read_ss(vector<vector<int>>& ss, const int& m, const bool& orient = true) {
 
 }
 
-void read_ss_from_ms(vector<vector<int>>& ss, const int& n) {
+void read_ss_from_ms(vector<vector<int>>& ss, const int& n)
+{
 
-    for (int i = 0;i < n;i++)
-        for (int j = 0;j < n;j++)
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < n; j++)
         {
             int cur;
             cin >> cur;
@@ -37,15 +39,19 @@ void read_ss_from_ms(vector<vector<int>>& ss, const int& n) {
 
 }
 
-bool dfs(int v) {
+bool dfs(int v)
+{
     cl[v] = 1;
-    for (size_t i = 0; i < ss[v].size(); ++i) {
+    for (size_t i = 0; i < ss[v].size(); ++i)
+    {
         int to = ss[v][i];
-        if (cl[to] == 0) {
+        if (cl[to] == 0)
+        {
             p[to] = v;
             if (dfs(to))  return true;
         }
-        else if (cl[to] == 1) {
+        else if (cl[to] == 1)
+        {
             cycle_end = v;
             cycle_st = to;
             //printf("cycle_end=%d cycle_st=%d\n", cycle_end, cycle_st);
@@ -77,7 +83,8 @@ void solve()
 
     if (cycle_st == -1)
         puts("0");
-    else {
+    else
+    {
         puts("1");
         // vector<int> cycle;
         // //cycle.push_back(cycle_st);

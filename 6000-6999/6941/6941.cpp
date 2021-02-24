@@ -18,12 +18,12 @@ void solve()
     cin >> m;
 
     ll arr[m] = { 0 };
-    for (int i = 0; i < m;i++)
+    for (int i = 0; i < m; i++)
         cin >> arr[i];
 
     ll ans = 0;
-    for (int i = 0; i < m;i++)
-        for (int j = i + 1; j < m;j++)
+    for (int i = 0; i < m; i++)
+        for (int j = i + 1; j < m; j++)
             ans += gcd(arr[i], arr[j]);
 
     cout << ans << endl;
@@ -39,7 +39,9 @@ int main()
 #endif
 
     //solve();
-    int t; cin >> t; while (t--) solve();
+    int t;
+    cin >> t;
+    while (t--) solve();
 
     return 0;
 }

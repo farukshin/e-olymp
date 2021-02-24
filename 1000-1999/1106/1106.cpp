@@ -55,7 +55,8 @@ int canDance(int m)
     do
     {
         memset(used, 0, sizeof(used));
-    } while ((flow = aug(0, 4 * n + 1, 0x7FFFFFFF)) && (maxFlow += flow));
+    }
+    while ((flow = aug(0, 4 * n + 1, 0x7FFFFFFF)) && (maxFlow += flow));
 
     return maxFlow == m * n;
 }

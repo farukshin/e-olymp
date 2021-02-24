@@ -10,13 +10,14 @@ void solve()
     cout.setf(std::ios::fixed);
     cout.precision(4);
 
-	ld x;
-	while(cin>>x){
-		ld ans =x*x*x + 2*x*x-3; 
-		cout<< ans <<endl;
-	}
-	
-	
+    ld x;
+    while(cin >> x)
+    {
+        ld ans = x * x * x + 2 * x * x - 3;
+        cout << ans << endl;
+    }
+
+
 }
 
 int main()

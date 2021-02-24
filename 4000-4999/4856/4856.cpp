@@ -5,7 +5,8 @@ using namespace std;
 typedef long long ll;
 typedef long double ld;
 
-void dejkstra(const vector<vector<pair<int, ll>>>& ss, const int& countNode, const int& start, vector<ll>& dist, vector<int>& parrent) {
+void dejkstra(const vector<vector<pair<int, ll>>>& ss, const int& countNode, const int& start, vector<ll>& dist, vector<int>& parrent)
+{
 
     dist.resize(countNode);
     fill(dist.begin(), dist.end(), LLONG_MAX);
@@ -69,12 +70,14 @@ void solve()
     stack<int> st;
     int cur = finish;
     st.push(cur + 1);
-    while (cur != start) {
+    while (cur != start)
+    {
         cur = parrent[cur];
         st.push(cur + 1);
     };
 
-    while (!st.empty()) {
+    while (!st.empty())
+    {
         cout << st.top() << " ";
         st.pop();
     }

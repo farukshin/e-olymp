@@ -11,27 +11,27 @@ void solve()
     int n;
     cin >> n;
 
-	set<ll> st;
-    vector<ll> arr(n,0), ans;
+    set<ll> st;
+    vector<ll> arr(n, 0), ans;
     for (int i = 0; i < n; i++)
         cin >> arr[i];
-    
+
     reverse(arr.begin(), arr.end());
-    
-    
+
+
     for (int i = 0; i < n; i++)
         if(!st.count(arr[i]))
-        	{
-        		st.insert(arr[i]);	
-        		ans.push_back(arr[i]);
-        	}
+        {
+            st.insert(arr[i]);
+            ans.push_back(arr[i]);
+        }
 
     reverse(ans.begin(), ans.end());
 
-	for(auto a : ans)
-		cout<< a <<" ";
-		
-	cout<<endl;
+    for(auto a : ans)
+        cout << a << " ";
+
+    cout << endl;
 
 
 }

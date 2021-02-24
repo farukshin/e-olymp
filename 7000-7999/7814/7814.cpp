@@ -9,23 +9,23 @@ void solve()
 {
     // cout.setf(ios::fixed);
     // cout.precision(2);
-    
+
     string s;
-    cin>>s;
-    
-    int a,b,c;
-    a= (s[0]-'0')*10+(s[1]-'0');
-    b= (s[0]-'0')*10+(s[2]-'0');
-    c= (s[1]-'0')*10+(s[2]-'0');
-    
-    a=(a<10 ? 100 : a);
-    b=(b<10 ? 100 : b);
-    c=(c<10 ? 100 : c);
-    
-    
-    
-    cout<< min(min(a,b),c) << endl; 
-	
+    cin >> s;
+
+    int a, b, c;
+    a = (s[0] - '0') * 10 + (s[1] - '0');
+    b = (s[0] - '0') * 10 + (s[2] - '0');
+    c = (s[1] - '0') * 10 + (s[2] - '0');
+
+    a = (a < 10 ? 100 : a);
+    b = (b < 10 ? 100 : b);
+    c = (c < 10 ? 100 : c);
+
+
+
+    cout << min(min(a, b), c) << endl;
+
 }
 
 int main()

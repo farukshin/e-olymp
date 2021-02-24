@@ -11,9 +11,9 @@ void solve()
     // cout.precision(0);
     int n;
     cin >> n ;
-    cout<< (1<<n) << endl; 
-	
-    
+    cout << (1 << n) << endl;
+
+
     //cout << ans << endl;
 }
 

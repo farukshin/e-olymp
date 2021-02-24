@@ -36,14 +36,16 @@ TimeF delen(TimeF t1, int n)
     return res;
 }
 
-TimeF toTm(string s) {
+TimeF toTm(string s)
+{
     TimeF res;
     res.h = s[0] + s[1];
     res.m = s[3] + s[4];
     return res;
 }
 
-string toStr(TimeF t) {
+string toStr(TimeF t)
+{
     string str;
     str = to_string(t.h) + ':' + to_string(t.m);
     return str;

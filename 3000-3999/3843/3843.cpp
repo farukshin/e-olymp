@@ -7,40 +7,41 @@ typedef long double ld;
 
 void eratosfen(int &n, vector<bool> &prime)
 {
-	prime.resize(n+1);
-	fill(prime.begin(), prime.end(), true);
-	
-	prime[0] = prime[1] = false;
-	for (int i=2; i<=n; ++i)
-		if (prime[i])
-			if (i * 1ll * i <= n)
-				for (int j=i*i; j<=n; j+=i)
-					prime[j] = false;
+    prime.resize(n + 1);
+    fill(prime.begin(), prime.end(), true);
+
+    prime[0] = prime[1] = false;
+    for (int i = 2; i <= n; ++i)
+        if (prime[i])
+            if (i * 1ll * i <= n)
+                for (int j = i * i; j <= n; j += i)
+                    prime[j] = false;
 }
 
 void solve()
 {
     // cout.setf(std::ios::fixed);
     // cout.precision(2);
-	int a,b;
-	//cin>>a>>b;
-	vector<bool> prime;
-	int mx = 1e7+5;
-	
-	eratosfen(mx, prime);
-	
-	int count[mx];
+    int a, b;
+    //cin>>a>>b;
+    vector<bool> prime;
+    int mx = 1e7 + 5;
+
+    eratosfen(mx, prime);
+
+    int count[mx];
     int lastSum = 0;
-    for(int i = 1; i < mx; i++){
+    for(int i = 1; i < mx; i++)
+    {
         count[i] = lastSum + prime[i];
         lastSum = count[i];
     }
-	
-	while(cin>>a>>b)
-	{
-		int ans = count[b] - count[a] + prime[a];
+
+    while(cin >> a >> b)
+    {
+        int ans = count[b] - count[a] + prime[a];
         cout << ans << endl << endl;
-	}
+    }
 }
 
 int main()

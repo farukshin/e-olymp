@@ -10,26 +10,26 @@ void solve()
     // cout.setf(std::ios::fixed);
     // cout.precision(2);
 
-	int n,m;
-	cin>>n>>m;
-	vector<int> sum(n,-1e5);
-	vector<vector<int>> v(n, vector<int>(m));
-	
-	for(int i=0;i<n;i++)
-	{
-		int sm=-1e5;
-		for(int j=0;j<m;j++)
-				{
-					cin>>v[i][j];
-					if(sm<v[i][j])
-						sm=v[i][j];
-				}
-		sum[i]=sm;
-	}
-	sort(sum.begin(), sum.end());
-	
-	cout<< sum[0] <<endl;
-	
+    int n, m;
+    cin >> n >> m;
+    vector<int> sum(n, -1e5);
+    vector<vector<int>> v(n, vector<int>(m));
+
+    for(int i = 0; i < n; i++)
+    {
+        int sm = -1e5;
+        for(int j = 0; j < m; j++)
+        {
+            cin >> v[i][j];
+            if(sm < v[i][j])
+                sm = v[i][j];
+        }
+        sum[i] = sm;
+    }
+    sort(sum.begin(), sum.end());
+
+    cout << sum[0] << endl;
+
 
 }
 

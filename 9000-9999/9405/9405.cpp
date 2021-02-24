@@ -10,15 +10,15 @@ void solve()
     // cout.setf(std::ios::fixed);
     // cout.precision(2);
 
-    int n,a,b;
-    cin>>n>>a>>b;
-    int z = n-b;
-    int x = a-z;
-    int y = b-x;
-    
-    
-    cout << x<<" "<<y<<" "<<z << endl;
-    
+    int n, a, b;
+    cin >> n >> a >> b;
+    int z = n - b;
+    int x = a - z;
+    int y = b - x;
+
+
+    cout << x << " " << y << " " << z << endl;
+
 }
 
 int main()

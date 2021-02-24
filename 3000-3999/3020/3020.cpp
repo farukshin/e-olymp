@@ -10,14 +10,16 @@ void solve()
     // cout.setf(std::ios::fixed);
     // cout.precision(2);
 
-    map<char, string> mp = {
+    map<char, string> mp =
+    {
         {' ', "%20"},
         {'!', "%21"},
         {'$', "%24"},
         {'%', "%25"},
         {'(', "%28"},
         {')', "%29"},
-        {'*', "%2a"}};
+        {'*', "%2a"}
+    };
 
     string s;
     while (getline(cin, s))

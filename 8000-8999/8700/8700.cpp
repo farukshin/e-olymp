@@ -15,7 +15,7 @@ void solve()
     int mx = 0;
     while (cin >> n)
     {
-        if(n==0)
+        if(n == 0)
             break;
         mp[n]++;
         if (mx < mp[n])

@@ -8,8 +8,9 @@ typedef long double ld;
 void solve()
 {
     int n;
-    cin>>n;
-    map<int, string> mp = {
+    cin >> n;
+    map<int, string> mp =
+    {
         {1, "1 4 9 16 25 36 49 64 81 100"},
         {2, "2 5 10 17 26 37 50 65 82 101"},
         {3, "2 6 12 20 30 42 56 72 90 110"},
@@ -18,7 +19,7 @@ void solve()
         {6, "1 2 6 24 120 720 5040 40320 362880 3628800"}
     };
 
-    cout << mp[n] <<endl;
+    cout << mp[n] << endl;
 
 }
 

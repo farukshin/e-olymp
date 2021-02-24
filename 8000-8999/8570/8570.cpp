@@ -12,7 +12,7 @@ void solve()
 
     string s;
     while (cin >> s)
-        cout << s.size() << " ";    
+        cout << s.size() << " ";
 }
 
 int main()

@@ -7,19 +7,19 @@ typedef long double ld;
 
 void solve()
 {
-     cout.setf(ios::fixed);
-     cout.precision(4);
-    
+    cout.setf(ios::fixed);
+    cout.precision(4);
+
     ld n;
-    cin>>n;
+    cin >> n;
     const double PI = acos(-1.0);
-    
-    ld l,s;
-    l = 2*PI*n;
-    s = PI*n*n;
-    cout <<l<<" "<<s<<endl;
-    
-	
+
+    ld l, s;
+    l = 2 * PI * n;
+    s = PI * n * n;
+    cout << l << " " << s << endl;
+
+
 }
 
 int main()

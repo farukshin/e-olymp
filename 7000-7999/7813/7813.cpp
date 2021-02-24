@@ -7,18 +7,18 @@ typedef long double ld;
 
 void solve()
 {
-     cout.setf(ios::fixed);
-     cout.precision(2);
-    
-    ld a,b,c,x,y,z;
-    cin>>a>>b>>c;
-    x = (a-b+c)/2;
-    y = a-x;
-    z = b-y;
-    
-    
-    cout<< x<< " "<<y<<" "<<z << endl; 
-	
+    cout.setf(ios::fixed);
+    cout.precision(2);
+
+    ld a, b, c, x, y, z;
+    cin >> a >> b >> c;
+    x = (a - b + c) / 2;
+    y = a - x;
+    z = b - y;
+
+
+    cout << x << " " << y << " " << z << endl;
+
 }
 
 int main()

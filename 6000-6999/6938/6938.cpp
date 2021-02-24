@@ -12,12 +12,14 @@ void solve()
 
     ll n;
     cin >> n;
-    map<string, int> mp = {
+    map<string, int> mp =
+    {
         {"Q1", 0},
         {"Q2", 0},
         {"Q3", 0},
         {"Q4", 0},
-        {"AXIS", 0} };
+        {"AXIS", 0}
+    };
 
     for (ll i = 0; i < n; i++)
     {

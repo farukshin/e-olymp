@@ -9,11 +9,11 @@ void solve()
 {
     // cout.setf(ios::fixed);
     // cout.precision(0);
-    int n,i;
-    cin >> n >>i;
-    int ans = n & (1u << i-1);
-    cout<< (ans>0 ? "YES" : "NO" ) << endl; 
-	
+    int n, i;
+    cin >> n >> i;
+    int ans = n & (1u << i - 1);
+    cout << (ans > 0 ? "YES" : "NO" ) << endl;
+
 }
 
 int main()

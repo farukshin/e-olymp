@@ -12,11 +12,13 @@ void solve()
 
     int n;
     cin >> n;
-    map<int, string> mp = {
+    map<int, string> mp =
+    {
         {1, "January\nFebruary\nMarch"},
         {2, "April\nMay\nJune"},
         {3, "July\nAugust\nSeptember"},
-        {4, "October\nNovember\nDecember"}};
+        {4, "October\nNovember\nDecember"}
+    };
 
     cout << mp[n] << endl;
 }

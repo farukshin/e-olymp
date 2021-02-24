@@ -18,7 +18,7 @@ void solve()
     string s = to_string(n);
 
 
-    for (int i = s.size() - 1;i >= 0;i--)
+    for (int i = s.size() - 1; i >= 0; i--)
         cout << s[i];
 
 

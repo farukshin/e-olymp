@@ -12,7 +12,7 @@ void solve()
 
     int n;
     cin >> n;
-    ll ans = pow(5,n);
+    ll ans = pow(5, n);
 
     cout << ans << endl;
 }

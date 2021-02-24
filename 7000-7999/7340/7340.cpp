@@ -14,17 +14,17 @@ void solve()
     cin >> s;
 
     set<char> st;
-    
+
     for (auto ch : s)
         if (ch >= 'A' && ch <= 'Z')
         {
             st.insert(ch);
-            
+
         }
 
 
     cout << st.size() << endl;
-    
+
 }
 
 int main()

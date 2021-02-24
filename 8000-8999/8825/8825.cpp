@@ -12,7 +12,7 @@ void solve()
 
     ld x;
     cin >> x;
-    ld y = x * x * x - (5 * x * x) / 7 + 9*x - 3 / x + 1;
+    ld y = x * x * x - (5 * x * x) / 7 + 9 * x - 3 / x + 1;
 
     cout << y << endl;
 }

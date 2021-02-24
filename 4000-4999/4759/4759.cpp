@@ -29,17 +29,17 @@ void solve()
     int n = arr.size();
 
     ans.clear();
-    for (int i = 0;i < n; i++)
+    for (int i = 0; i < n; i++)
         ans.push_back(arr[i] * arr[i]);
     print(ans);
 
     ans.clear();
-    for (int i = 0;i < n; i++)
+    for (int i = 0; i < n; i++)
         ans.push_back(arr[i] % 11);
     print(ans);
 
     ans.clear();
-    for (int i = 0;i < n; i++)
+    for (int i = 0; i < n; i++)
         if (arr[i] % 2 == 0)
             ans.push_back(arr[i]);
     print(ans);
@@ -47,20 +47,20 @@ void solve()
 
 
     ans.clear();
-    for (int i = 0;i < n; i++)
+    for (int i = 0; i < n; i++)
         if (arr[i] >= 0 && to_string(arr[i]).length() % 2 == 1 || arr[i] < 0 && to_string(arr[i]).length() % 2 == 0)
             ans.push_back(arr[i]);
     print(ans);
 
 
     ans.clear();
-    for (int i = 0;i < n; i++)
-        if (arr[i] > 9 && arr[i] < 100 || arr[i] <-9 && arr[i]>-100)
+    for (int i = 0; i < n; i++)
+        if (arr[i] > 9 && arr[i] < 100 || arr[i] < -9 && arr[i] > -100)
             ans.push_back(arr[i] * 100 + arr[i]);
     print(ans);
 
     ans.clear();
-    for (int i = 0;i < n; i++)
+    for (int i = 0; i < n; i++)
         if (i % 3 != 0)
             ans.push_back(arr[i]);
     print(ans);

@@ -11,8 +11,8 @@ void solve()
     // cout.precision(1);
     ll x;
     cin >> x;
-    
-    ll ans=0;
+
+    ll ans = 0;
     if (x >= 10)
         ans = x * x * x + 5 * x;
     else

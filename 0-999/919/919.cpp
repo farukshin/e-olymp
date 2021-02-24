@@ -14,9 +14,10 @@ void solve()
 
     ld sum = 0;
     int k = 0;
-    for (int i = 1; i <= n;i++)
+    for (int i = 1; i <= n; i++)
     {
-        ld cur; cin >> cur;
+        ld cur;
+        cin >> cur;
         if (i % 3 == 0 && cur > 0)
             sum += cur, k++;
     }

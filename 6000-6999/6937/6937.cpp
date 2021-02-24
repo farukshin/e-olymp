@@ -12,7 +12,8 @@ void solve()
 
     ll n;
     cin >> n;
-    map<pair<char, char>, int> mp = {
+    map<pair<char, char>, int> mp =
+    {
         {{'H', 'P'}, 103},
         {{'H', 'S'}, 329},
         {{'H', 'K'}, 466},
@@ -22,13 +23,14 @@ void solve()
         {{'P', 'T'}, 260},
         {{'S', 'K'}, 287},
         {{'S', 'T'}, 226},
-        {{'K', 'T'}, 312}};
+        {{'K', 'T'}, 312}
+    };
 
 
     for (ll j = 0; j < n; j++)
     {
         string s;
-        cin>>s;
+        cin >> s;
         s = 'H' + s + 'H';
         ll ans = 0;
         for (int i = 0; i < s.size() - 1; i++)

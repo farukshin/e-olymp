@@ -13,10 +13,10 @@ void solve()
     ll ans = 0, l, r;
     cin >> l >> r;
 
-    for (ll i = 0; i < l;i++)
+    for (ll i = 0; i < l; i++)
         cout << s[i];
 
-    for (ll i = r+1; i < s.size();i++)
+    for (ll i = r + 1; i < s.size(); i++)
         cout << s[i];
 
 

@@ -14,14 +14,14 @@ ll func(ll x, ll y)
         return 0;
 
     if (mp.count({x, y}) > 0)
-        return mp[{x, y}];
+        return mp[ {x, y}];
 
     ll res = 0;
     if (x <= y)
         res = func(x - 1, y - 2) + func(x - 2, y - 1) + 2;
     else if (x > y)
         res = func(x - 2, y - 2) + 1;
-    mp[{x, y}] = res;
+    mp[ {x, y}] = res;
     return res;
 }
 

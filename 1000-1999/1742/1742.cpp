@@ -30,8 +30,8 @@ void solve()
     }
 
     cout << ans.size() << endl;
-    for (int i = 0; i <= ans.size()-1; i++)
-        cout << ans[i] << (i == ans.size()-1 ? "\n" : " ");
+    for (int i = 0; i <= ans.size() - 1; i++)
+        cout << ans[i] << (i == ans.size() - 1 ? "\n" : " ");
 }
 
 int main()

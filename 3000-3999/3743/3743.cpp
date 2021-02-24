@@ -10,16 +10,17 @@ void solve()
     //cout.setf(std::ios::fixed);
     //cout.precision(4);
 
-	int a,b;
-	while(cin>>a>>b){
-		if(a!=0 && b!=0)
-			{
-				ll ans = (2*a-b);
-				cout<<ans<<endl;
-			}
-		else 
-			break;
-	}
+    int a, b;
+    while(cin >> a >> b)
+    {
+        if(a != 0 && b != 0)
+        {
+            ll ans = (2 * a - b);
+            cout << ans << endl;
+        }
+        else
+            break;
+    }
 }
 
 int main()

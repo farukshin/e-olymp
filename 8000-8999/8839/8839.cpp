@@ -9,8 +9,8 @@ void solve()
 {
     ll n, m;
     cin >> n >> m;
-    ll ans = n%m;
-    
+    ll ans = n % m;
+
     cout << ans << endl;
 }
 

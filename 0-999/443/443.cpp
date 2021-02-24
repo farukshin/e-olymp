@@ -10,25 +10,26 @@ void solve()
     // cout.setf(std::ios::fixed);
     // cout.precision(2);
 
-	int n,k;
-	cin>>n>>k;
-	vector<pair<int, string>> v;
-	
-	for(int i=0;i<n;i++)
-	{
-		int cur; string s;
-		cin>>s>>cur;
-		v.push_back({cur,s});
-	}
-	sort(v.begin(), v.end());
-	
-	set<string> ans;
-	for(int i=0;i<min(n,k);i++)
-		ans.insert(v[i].second);
-		
-	for(auto f:ans)
-		cout<<f<<endl;
-    
+    int n, k;
+    cin >> n >> k;
+    vector<pair<int, string>> v;
+
+    for(int i = 0; i < n; i++)
+    {
+        int cur;
+        string s;
+        cin >> s >> cur;
+        v.push_back({cur, s});
+    }
+    sort(v.begin(), v.end());
+
+    set<string> ans;
+    for(int i = 0; i < min(n, k); i++)
+        ans.insert(v[i].second);
+
+    for(auto f : ans)
+        cout << f << endl;
+
 }
 
 int main()

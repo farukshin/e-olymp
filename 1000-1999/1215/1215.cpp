@@ -10,19 +10,20 @@ void solve()
     // cout.setf(std::ios::fixed);
     // cout.precision(0);
 
-    set<pair<char, char>> sets = {
-        {'R','S'},
-        {'P','R'},
-        {'S','P'},
-        {'S','S'},
-        {'P','P'},
-        {'R','R'}
+    set<pair<char, char>> sets =
+    {
+        {'R', 'S'},
+        {'P', 'R'},
+        {'S', 'P'},
+        {'S', 'S'},
+        {'P', 'P'},
+        {'R', 'R'}
     };
 
     int n;
     cin >> n;
     int p1 = 0, p2 = 0;
-    for (int i = 0;i < n;i++)
+    for (int i = 0; i < n; i++)
     {
         char ch1, ch2;
 
@@ -32,8 +33,8 @@ void solve()
             p1++, p2++;
         else
         {
-            p1 += (sets.count({ ch1,ch2 }) ? 1 : 0);
-            p2 += (sets.count({ ch2,ch1 }) ? 1 : 0);
+            p1 += (sets.count({ ch1, ch2 }) ? 1 : 0);
+            p2 += (sets.count({ ch2, ch1 }) ? 1 : 0);
         }
     }
 
@@ -54,7 +55,9 @@ int main()
 #endif
 
     //solve();
-    int t; cin >> t; while (t--) solve();
+    int t;
+    cin >> t;
+    while (t--) solve();
 
     return 0;
 }

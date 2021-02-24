@@ -16,7 +16,7 @@ void solve()
     for (auto ch : s)
         if (ch >= '0' && ch <= '9')
             mp[ch - '0']++;
-    
+
     cout << mp[5] << endl;
 }
 

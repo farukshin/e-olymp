@@ -7,16 +7,16 @@ typedef long double ld;
 
 void solve()
 {
-     cout.setf(std::ios::fixed);
-     cout.precision(2);
+    cout.setf(std::ios::fixed);
+    cout.precision(2);
 
-	ld a,b;
-	cin>>a>>b;
-	
-	ld ans = -a/2;
-	
-	cout<< ans<<endl;
-    
+    ld a, b;
+    cin >> a >> b;
+
+    ld ans = -a / 2;
+
+    cout << ans << endl;
+
 }
 
 int main()

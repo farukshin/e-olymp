@@ -14,7 +14,8 @@ void solve()
     cin >> n;
     ld sum = 0;
     int k = 0;
-    while (n--) {
+    while (n--)
+    {
         ld cur;
         cin >> cur;
         if (cur < 0.0)

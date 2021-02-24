@@ -15,7 +15,8 @@ void solve()
     cin.getline(cipher, MAX_SIZE);
     int k;
     cin >> k;
-    for (int i = 0; i < strlen(cipher); i++) {
+    for (int i = 0; i < strlen(cipher); i++)
+    {
         if (cipher[i] >= 'A' + k)
             cipher[i] -= k;
         else

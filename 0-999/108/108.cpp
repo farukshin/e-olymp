@@ -11,9 +11,9 @@ void solve()
     // cout.precision(2);
 
     vector<ll> v(3);
-    int n=3;
+    int n = 3;
     while(n--)
-        cin>>v[n];
+        cin >> v[n];
 
     sort(v.begin(), v.end());
 

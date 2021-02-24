@@ -25,7 +25,7 @@ void solve()
 
     for (int i = 0; i < MAXARR; i++)
         if (arr[i] > 0)
-            for (int j = 0;j < arr[i];j++)
+            for (int j = 0; j < arr[i]; j++)
                 cout << i << ' ';
     cout << endl;
 }

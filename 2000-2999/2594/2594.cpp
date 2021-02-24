@@ -17,9 +17,9 @@ void solve()
     {
         int a, b;
         cin >> a >> b;
-        mp[{a, b}]++;
-        if (ans < mp[{a, b}])
-            ans = mp[{a, b}];
+        mp[ {a, b}]++;
+        if (ans < mp[ {a, b}])
+            ans = mp[ {a, b}];
     }
 
     cout << ans << endl;

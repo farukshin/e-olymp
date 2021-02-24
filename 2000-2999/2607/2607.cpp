@@ -10,17 +10,17 @@ void solve()
     //cout.setf(std::ios::fixed);
     //cout.precision(4);
 
-	int n;
-	cin>>n;
-	
-	string s = to_string(n);
-	int s1=0,s0=0;
-	for(int i=0;i<s.size();i++)
-		if(i%2)
-			s0+= (s[i]-'0');
-		else
-			s1 += (s[i]-'0');
-	cout<<s1*s0<<endl;
+    int n;
+    cin >> n;
+
+    string s = to_string(n);
+    int s1 = 0, s0 = 0;
+    for(int i = 0; i < s.size(); i++)
+        if(i % 2)
+            s0 += (s[i] - '0');
+        else
+            s1 += (s[i] - '0');
+    cout << s1*s0 << endl;
 }
 
 int main()

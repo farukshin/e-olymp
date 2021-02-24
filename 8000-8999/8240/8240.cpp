@@ -10,13 +10,14 @@ void solve()
     cout.setf(std::ios::fixed);
     cout.precision(4);
 
-	ld x;
-	while(cin>>x){
-		ld ans =sqrt(x) + 2*x + sin(x); 
-		cout<< ans <<endl;
-	}
-	
-	
+    ld x;
+    while(cin >> x)
+    {
+        ld ans = sqrt(x) + 2 * x + sin(x);
+        cout << ans << endl;
+    }
+
+
 }
 
 int main()

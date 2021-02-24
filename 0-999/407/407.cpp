@@ -9,7 +9,8 @@ void solve()
 {
     int n;
     cin >> n;
-    while (n--) {
+    while (n--)
+    {
         int cur;
         cin >> cur;
         if (cur % 3 == 0)

@@ -7,51 +7,51 @@ typedef long double ld;
 
 void eratosfen(int &n, vector<bool> &prime)
 {
-	prime.resize(n+1);
-	fill(prime.begin(), prime.end(), true);
-	
-	prime[0] = prime[1] = false;
-	for (int i=2; i<=n; ++i)
-		if (prime[i])
-			if (i * 1ll * i <= n)
-				for (int j=i*i; j<=n; j+=i)
-					prime[j] = false;
+    prime.resize(n + 1);
+    fill(prime.begin(), prime.end(), true);
+
+    prime[0] = prime[1] = false;
+    for (int i = 2; i <= n; ++i)
+        if (prime[i])
+            if (i * 1ll * i <= n)
+                for (int j = i * i; j <= n; j += i)
+                    prime[j] = false;
 }
 
 bool polindr(int n)
 {
-	
-	int cur = n, rev =0;
-	
-	
-	while(cur)
-	{
-		rev = rev *10 + (cur%10);
-		cur /=10;
-	}
-	
-	bool ans = (rev == n);
-	return ans;
+
+    int cur = n, rev = 0;
+
+
+    while(cur)
+    {
+        rev = rev * 10 + (cur % 10);
+        cur /= 10;
+    }
+
+    bool ans = (rev == n);
+    return ans;
 }
 void solve()
 {
     // cout.setf(std::ios::fixed);
     // cout.precision(2);
-	int a,b;
-	//cin>>a>>b;
-	vector<bool> prime;
-	int mx = 1e7+1;
-	eratosfen(mx, prime);
-	
-	//bool success = false;
-	int ans =0;
-		cin>>a>>b;
-		for(int i=a;i<=b;i++)
-			if(prime[i] && polindr(i))
-				ans++;
-		//cout<<endl;
-		
-	cout<< ans <<endl;
+    int a, b;
+    //cin>>a>>b;
+    vector<bool> prime;
+    int mx = 1e7 + 1;
+    eratosfen(mx, prime);
+
+    //bool success = false;
+    int ans = 0;
+    cin >> a >> b;
+    for(int i = a; i <= b; i++)
+        if(prime[i] && polindr(i))
+            ans++;
+    //cout<<endl;
+
+    cout << ans << endl;
 }
 
 int main()

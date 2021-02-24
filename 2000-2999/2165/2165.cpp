@@ -13,13 +13,13 @@ void solve()
     string s;
     getline(cin, s);
     int i;
-    for (i = 0;i < s.size();i++)
+    for (i = 0; i < s.size(); i++)
         if (s[i] != ' ')
             break;
     if (i)
         s = s.substr(i);
 
-    for (i = s.size() - 1;i >= 0;i--)
+    for (i = s.size() - 1; i >= 0; i--)
         if (s[i] != ' ')
             break;
     if (i != s.size() - 1)
@@ -29,7 +29,7 @@ void solve()
     if (s.size() > 0)
         cout << s[0];
 
-    for (i = 1;i < s.size();i++)
+    for (i = 1; i < s.size(); i++)
         if (s[i - 1] == ' ' && s[i] == ' ')
             continue;
         else

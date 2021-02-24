@@ -11,7 +11,7 @@ void solve()
     cin >> n;
 
     ld res = log2(n);
-    ll resNext = (res == ceil(res) ? ceil(res)+1 : ceil(res));
+    ll resNext = (res == ceil(res) ? ceil(res) + 1 : ceil(res));
     ll ans = pow(2, resNext);
     cout << ans << endl;
 }

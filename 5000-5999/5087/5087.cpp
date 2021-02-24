@@ -26,8 +26,8 @@ void solve()
         }
         else if (n == 2)
             cout
-                << st.top() << endl,
-                st.pop();
+                    << st.top() << endl,
+                    st.pop();
     }
 }
 

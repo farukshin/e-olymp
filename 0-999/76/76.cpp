@@ -10,16 +10,16 @@ void solve()
     // cout.setf(std::ios::fixed);
     // cout.precision(2);
 
-    int a,b,x,y,z;
+    int a, b, x, y, z;
     vector<int> v(3);
-    cin >> a>>b>>v[0]>>v[1]>>v[2];
-    
+    cin >> a >> b >> v[0] >> v[1] >> v[2];
+
     sort(v.begin(), v.end());
-    
-    if(a>b)
-    	swap(a,b);
-    
-    cout<< (a>v[0] && b>v[1]?1:0) <<endl;
+
+    if(a > b)
+        swap(a, b);
+
+    cout << (a > v[0] && b > v[1] ? 1 : 0) << endl;
 }
 
 int main()

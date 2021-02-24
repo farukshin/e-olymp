@@ -11,7 +11,7 @@ void solve()
     cin >> n >> m;
 
     vector<vector<int>> ss(n);
-    for (int i = 0;i < m;i++)
+    for (int i = 0; i < m; i++)
     {
         int a, b;
         cin >> a >> b;
@@ -20,7 +20,7 @@ void solve()
         ss[b].push_back(a);
     }
 
-    for (int i = 0;i < n;i++)
+    for (int i = 0; i < n; i++)
         cout << ss[i].size() << " ";
     cout << endl;
 }

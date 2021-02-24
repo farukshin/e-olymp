@@ -10,9 +10,9 @@ void solve()
     // cout.setf(std::ios::fixed);
     // cout.precision(2);
 
-    ll a, b,ans;
+    ll a, b, ans;
     cin >> a >> b;
-    ans = a+b;
+    ans = a + b;
 
     cout << ans << endl;
 }

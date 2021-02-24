@@ -32,7 +32,9 @@ int main()
 #endif
 
     //solve();
-    int t; cin >> t; while (t--) solve();
+    int t;
+    cin >> t;
+    while (t--) solve();
 
     return 0;
 }

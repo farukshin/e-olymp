@@ -11,7 +11,7 @@ void solve()
     cin >> n;
 
     vector<tuple<int, int, int>> v;
-    for (int i = 0;i < n;i++)
+    for (int i = 0; i < n; i++)
     {
         int a, b, c;
         cin >> a >> b >> c;

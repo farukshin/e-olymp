@@ -9,10 +9,12 @@ void solve()
 {
     int n;
     cin >> n;
-    if ((n % 2 == 0 and (n >= 0 or n % 3 != 0)) or (n % 3 == 0 and n < 0 and n % 2 != 0)) {
+    if ((n % 2 == 0 and (n >= 0 or n % 3 != 0)) or (n % 3 == 0 and n < 0 and n % 2 != 0))
+    {
         cout << "YES";
     }
-    else {
+    else
+    {
         cout << "NO";
     }
 }

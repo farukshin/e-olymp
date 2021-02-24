@@ -10,16 +10,16 @@ void solve()
     // cout.setf(std::ios::fixed);
     // cout.precision(2);
 
-	string s;
-	getline(cin,s);
-	int ans =0;
-	
-	for(auto ch:s)
-		if(ch=='A' || ch=='E' || ch=='I'|| ch=='O'|| ch=='U'|| ch=='Y')
-			ans++;
-		
-	cout<<ans<<endl;
-    
+    string s;
+    getline(cin, s);
+    int ans = 0;
+
+    for(auto ch : s)
+        if(ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U' || ch == 'Y')
+            ans++;
+
+    cout << ans << endl;
+
 }
 
 int main()

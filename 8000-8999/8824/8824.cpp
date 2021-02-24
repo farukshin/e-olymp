@@ -12,7 +12,7 @@ void solve()
 
     ll x, y;
     cin >> x >> y;
-    ld ans = (x + y)/2;
+    ld ans = (x + y) / 2;
 
     cout << ans << endl;
 }

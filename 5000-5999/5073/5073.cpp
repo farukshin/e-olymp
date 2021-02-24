@@ -15,13 +15,13 @@ void solve()
     map<pair<int, int>, int> mp;
 
     bool succes = false;
-    for (int i = 0;i < m;i++)
+    for (int i = 0; i < m; i++)
     {
         int a, b;
         cin >> a >> b;
         if (mp.count({ a, b }) > 0)
             succes = true;
-        mp[{a, b}]++;
+        mp[ {a, b}]++;
     }
 
     cout << (succes ? "YES" : "NO") << endl;

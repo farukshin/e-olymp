@@ -13,11 +13,25 @@ void solve()
 
     int n, i, a = 1, b = 10;
     cin >> n;
-    for (i = 1;n > 0;i++) {
-        if (i < b) { n = n - a; }
-        if (i == b - 1) { a++; b = b * 10; }
-        if (n == 0) { cout << i; }
-        else if (n < 0) { cout << 0; }
+    for (i = 1; n > 0; i++)
+    {
+        if (i < b)
+        {
+            n = n - a;
+        }
+        if (i == b - 1)
+        {
+            a++;
+            b = b * 10;
+        }
+        if (n == 0)
+        {
+            cout << i;
+        }
+        else if (n < 0)
+        {
+            cout << 0;
+        }
     }
 
 

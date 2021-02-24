@@ -13,7 +13,7 @@ void solve()
     ll list = 0, iar = 0, sum = 0;
     cin >> iar;
     iar = abs(iar);
-    for (int i = 1;i <= iar;i++)
+    for (int i = 1; i <= iar; i++)
     {
         list = list + 2;
         sum = list + sum;

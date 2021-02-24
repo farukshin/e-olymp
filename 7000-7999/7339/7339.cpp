@@ -9,17 +9,18 @@ void solve()
 {
     // cout.setf(ios::fixed);
     // cout.precision(0);
-    
+
     int n;
-    cin>>n;
-    string s="";
-    
-    while(n){
-    	s = to_string(n%2) + s;
-    	n/=2;
+    cin >> n;
+    string s = "";
+
+    while(n)
+    {
+        s = to_string(n % 2) + s;
+        n /= 2;
     }
-    cout<< s << endl; 
-	
+    cout << s << endl;
+
 }
 
 int main()

@@ -13,7 +13,7 @@ void solve()
     cout.setf(ios::fixed);
     cout.precision(2);
 
-    for (int i = 0; i < n && !success;i++)
+    for (int i = 0; i < n && !success; i++)
     {
         ld cur;
         cin >> cur;

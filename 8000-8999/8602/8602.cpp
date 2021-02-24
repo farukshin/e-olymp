@@ -13,7 +13,7 @@ void solve()
     cin >> a;
     string s = to_string(a);
 
-    cout << s[s.size()-3] << endl;
+    cout << s[s.size() - 3] << endl;
 
 }
 

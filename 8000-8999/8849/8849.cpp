@@ -11,7 +11,7 @@ void solve()
     int n;
     cin >> n;
     string s = to_string(n);
-    cout << s[0] << s[0]<<s[1] << s[1] << endl;
+    cout << s[0] << s[0] << s[1] << s[1] << endl;
 
 
 

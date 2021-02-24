@@ -5,7 +5,8 @@ using namespace std;
 typedef long long ll;
 typedef long double ld;
 
-void dejkstra(const vector<vector<pair<int, ll>>>& ss, const int& countNode, const int& start, vector<ll>& dist, vector<int>& parrent) {
+void dejkstra(const vector<vector<pair<int, ll>>>& ss, const int& countNode, const int& start, vector<ll>& dist, vector<int>& parrent)
+{
 
     dist.resize(countNode);
     fill(dist.begin(), dist.end(), LLONG_MAX);
@@ -42,10 +43,11 @@ void dejkstra(const vector<vector<pair<int, ll>>>& ss, const int& countNode, con
         }
     }
 }
-void read_ss_from_ms(vector<vector<pair<int, ll>>>& ss, const int& n) {
+void read_ss_from_ms(vector<vector<pair<int, ll>>>& ss, const int& n)
+{
 
-    for (int i = 0;i < n;i++)
-        for (int j = 0;j < n;j++)
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < n; j++)
         {
             int cur;
             cin >> cur;

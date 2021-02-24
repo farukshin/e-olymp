@@ -12,7 +12,7 @@ void solve()
 
     string s;
     getline(cin, s);
-    cout << s << endl<< s.size() << endl;
+    cout << s << endl << s.size() << endl;
 }
 
 int main()
