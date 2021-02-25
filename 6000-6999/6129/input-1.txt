@@ -1,0 +1,6 @@
+front
+back
+pop_back
+pop_front
+exit
+
