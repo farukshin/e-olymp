@@ -1,0 +1,14 @@
+3
+Sidorov
+Sidor
+9A
+20.07.93
+Petrov
+Petr
+9B
+23.10.92
+Ivanov
+Ivan
+9A
+10.04.93
+
