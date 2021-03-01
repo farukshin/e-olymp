@@ -1,0 +1,10 @@
+9
+pushfront 1 71819
+pushback 2 71820
+pushback 1 1
+popfront 1
+popfront 1
+pushfront 2 10
+pushback 2 11
+popback 2
+popback 2

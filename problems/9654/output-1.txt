@@ -1,0 +1,6 @@
+Vertex: 1, Gray 1, Black 6
+Vertex: 2, Gray 2, Black 5
+Vertex: 4, Gray 3, Black 4
+Vertex: 3, Gray 7, Black 8
+Vertex: 5, Gray 9, Black 12
+Vertex: 6, Gray 10, Black 11
