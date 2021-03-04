@@ -1,0 +1,162 @@
+//https://www.e-olymp.com/ru/problems/1064
+#include <bits/stdc++.h>
+using namespace std;
+
+typedef long long ll;
+typedef long double ld;
+
+bool used[55][55] = {false};
+
+int bfs(pair<int, int> start, pair<int, int> finish, const int & m, const int & n, const int & p, const int & q, map<pair<int, int>, pair<int, int>> &chield)
+{
+    struct step
+    {
+        int x;
+        int y;
+        int d;
+    };
+
+    queue<step> que;
+    que.push({start.first, start.second, 0});
+
+    pair<int, int> run[8] = {{p, -q}, {p, q}, {-p, -q}, {-p, q}, {q, p}, {q, -p}, {-q, p}, {-q, -p}};
+    int MAXARR = max(m, n) + 1;
+    //bool used[MAXARR][MAXARR] = {false};
+
+    while (!que.empty())
+    {
+        auto cur = que.front();
+        que.pop();
+
+        if (cur.x == finish.first && cur.y == finish.second)
+        {
+            //chield[{finish.first, finish.second}]= {cur.x, cur.y};
+            return cur.d;
+        }
+
+        for (auto r : run)
+            if (cur.x + r.first <= m && cur.x + r.first >= 1 && cur.y + r.second <= n && cur.y + r.second >= 1 && !used[cur.x + r.first][cur.y + r.second])
+            {
+                used[cur.x + r.first][cur.y + r.second] = true;
+                que.push({cur.x + r.first, cur.y + r.second, cur.d + 1});
+                chield[ {cur.x + r.first, cur.y + r.second}] = {cur.x, cur.y};
+            }
+    }
+
+    return -1;
+}
+
+void pq_horse(const int & m, const int & n, const int & p, const int & q, pair<int, int> & start, pair<int, int> &finish, int &ans, stack<pair<int, int>> &st)
+{
+    map<pair<int, int>, pair<int, int>> chield;
+    ans = bfs(start, finish, m, n, p, q, chield);
+
+    if(ans == -1)
+    {
+        while(!st.empty()) st.pop();
+        return;
+    }
+
+    st.push(finish);
+    pair<int, int> cur = finish;
+    while(cur != start)
+    {
+        cur = chield[ {cur.first, cur.second}];
+        st.push({cur.first, cur.second});
+    }
+}
+
+void solve()
+{
+    int x1, y1, x2, y2;
+    //char c1,c2;
+    int n = 8, p = 2, q = 1;
+    // map<char, int> mp ={
+    // 	{'a',1},
+    // 	{'b',2},
+    // 	{'c',3},
+    // 	{'d',4},
+    // 	{'e',5},
+    // 	{'f',6},
+    // 	{'g',7},
+    // 	{'h',8}
+    // };
+
+    // map<char, int> mp2 ={
+    // 	{1, 'a'},
+    // 	{2, 'b'},
+    // 	{3, 'c'},
+    // 	{4 ,'d'},
+    // 	{5 ,'e'},
+    // 	{6 ,'f'},
+    // 	{7 ,'g'},
+    // 	{8 ,'h'}
+    // };
+
+
+
+    //while(cin >> c1 >> y1 >> c2 >> y2)
+    //{
+    cin >> n;
+    vector<vector<char>> v(n + 1, vector<char>(n + 1, '.'));
+
+    bool setStart = false;
+    for(int i = 1; i <= n; i++)
+        for(int j = 1; j <= n; j++)
+        {
+            cin >> v[i][j];
+            if(v[i][j] == '@' && !setStart)
+                setStart = true, x1 = i, y1 = j;
+            else if(v[i][j] == '@' && setStart)
+                x2 = i, y2 = j;
+            else if(v[i][j] == '#')
+                used[i][j] = true;
+        }
+
+    pair<int, int> start = {x1, y1};
+    pair<int, int> finish = {x2, y2};
+    int ans;
+    stack<pair<int, int>> st;
+
+    pq_horse(n, n, p, q, start, finish, ans, st);
+    //cout<<"To get from "<<c1<<y1<<" to "<<c2<<y2<<" takes "<<ans<<" knight moves."<<endl;
+    //cout<<st.size()<<endl;
+    if(ans == -1)
+    {
+        cout << "Impossible" << endl;
+        return;
+    }
+
+    while(!st.empty())
+    {
+        auto cur = st.top();
+        st.pop();
+        v[cur.first][cur.second] = '@';
+        //cout<<(char)mp2[cur.first]<<cur.second<<endl;
+        //cout<<(char)mp2[cur.first]<<cur.second;
+    }
+
+    for(int i = 1; i <= n; i++)
+    {
+        for(int j = 1; j <= n; j++)
+            cout << v[i][j];
+        cout << endl;
+    }
+
+
+    //}
+
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false), cin.tie(NULL), cout.tie(NULL);
+
+#ifdef _DEBUG
+    freopen("input-1.txt", "r", stdin);
+    //freopen("output-1.txt", "w", stdout);
+#endif
+
+    solve();
+    return 0;
+}

@@ -1,0 +1,3 @@
+To get from h8 to a1 takes 6 knight moves.
+To get from b1 to c3 takes 1 knight moves.
+To get from f6 to f6 takes 0 knight moves.
