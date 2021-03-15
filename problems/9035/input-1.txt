@@ -1,0 +1,8 @@
+push 6
+push 3
+push 12
+GetMin
+pop
+size
+GetMin
+
