@@ -1,5 +1,4 @@
 //https://www.e-olymp.com/ru/problems/219
-//#tech_debt
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -8,11 +7,17 @@ typedef long double ld;
 
 void solve()
 {
-    ld a, b, c, d;
+    ll a, b, c, d;
     cin >> a >> b >> c >> d;
-    ld res = (a / d) * b * c;
-    //cout << res << endl;
-    cout << ceil(res) << endl;
+    ll res = a  * b * c;
+    ll n = res / d;
+    for(ll i = n - 1;; i++)
+        if(i * d >= res)
+        {
+            cout << i << endl;
+            return;
+        }
+
 }
 
 int main()
