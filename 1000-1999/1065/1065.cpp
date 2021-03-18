@@ -1,92 +1,59 @@
 //https://www.e-olymp.com/ru/problems/1065
-//#tech_debt
 #include <bits/stdc++.h>
 using namespace std;
-
-#define ios_b                         \
-    ios_base::sync_with_stdio(false); \
-    cin.tie(NULL);                    \
-    cout.tie(NULL);
 
 typedef long long ll;
 typedef long double ld;
 
-vector<vector<int>> ss;
 vector<string> input;
-vector<bool> used;
+vector<vector<bool>> used;
 int n, m;
+int ans = 0;
+int r1[4] = {0, 1, -1, 0};
+int r2[4] = {1, 0, 0, -1};
 
-void dfs(int node)
+void dfs(int i, int j)
 {
-    used[node] = true;
+    used[i][j] = true;
 
-    for (auto chield : ss[node])
-        if (!used[chield])
-            dfs(chield);
-}
+    for (int k = 0; k < 4; k++)
+    {
+        int ii = i + r1[k];
+        int jj = j + r2[k];
 
-void check(int a, int b)
-{
-    int cur = a * m + b;
-
-    int up = cur - m;
-    if (up > 0 && input[a - 1][b] == '#')
-        ss[cur].push_back(up);
-
-    int down = cur + m;
-    if (down <= n * m + m && input[a + 1][b] == '#')
-        ss[cur].push_back(down);
-
-    int left = cur - 1;
-    if (b > 0 && input[a][b - 1] == '#')
-        ss[cur].push_back(left);
-
-    int right = cur + 1;
-    if (b < m - 1 && input[a][b + 1] == '#')
-        ss[cur].push_back(right);
+        if (ii >= 0 && ii < n && jj >= 0 && jj < m && input[ii][jj] == '#' && !used[ii][jj])
+            dfs(ii, jj);
+    }
 }
 
 void solve()
 {
-
     cin >> n >> m;
-    int MAXARR = n * m + m + 1;
 
-    used.resize(MAXARR);
-    ss.resize(MAXARR);
-    input.resize(n + 5);
-
-    fill(begin(used), end(used), true);
+    used.resize(n, vector<bool>(m, false));
+    input.resize(n);
 
     for (int i = 0; i < n; i++)
         cin >> input[i];
 
     for (int i = 0; i < n; i++)
         for (int j = 0; j < m; j++)
-            if (input[i][j - 1] == '#')
-            {
-                used[i * m + j] = false;
-                check(i, j);
-            }
-
-    int ans = 0;
-    for (int i = 0; i < n * m + m - 1; i++)
-        if (!used[i])
-        {
-            ans++;
-            cout << i / m << " " << i % m << endl;
-            dfs(i);
-        }
-    cout << ans << endl;
+            if (input[i][j] == '#' && !used[i][j])
+                dfs(i, j), ans++;
+    cout << ans;
 }
 
 int main()
 {
-    ios_b;
+    ios_base::sync_with_stdio(false), cin.tie(NULL), cout.tie(NULL);
+
 #ifdef _DEBUG
     freopen("input-1.txt", "r", stdin);
     //freopen("output-1.txt", "w", stdout);
 #endif
+
     solve();
+    //int t; cin >> t; while (t--) solve();
+
     return 0;
 }
