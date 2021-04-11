@@ -1,0 +1,7 @@
+6
+Facebook 6 789
+Google 5 123
+E-olymp 7 345
+IBM 7 340
+Codeforces 5 54
+Microsoft 5 123
