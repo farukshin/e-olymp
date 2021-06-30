@@ -1,82 +1,61 @@
-//https://www.e-olymp.com/ru/problems/1389
-//#tech_debt
+// https://www.e-olymp.com/ru/problems/1389
 #include <bits/stdc++.h>
 using namespace std;
 
 typedef long long ll;
 typedef long double ld;
 
-void dejkstra(const vector<vector<tuple<int, int, int>>> &ss, const int &countNode, const int &start, vector<int> &dist, vector<int> &parrent)
+int ans = -1;
+int n, start, finish, k;
+vector<vector<pair<int, pair<int, int>>>> ss;
+vector<int> color;
+
+void dfs(int node, int tik)
 {
+    color[node] = 1;
+    if(node == finish)
+        ans = (ans == -1 ? tik : min(ans, tik));
 
-    dist.resize(countNode, 1e4 + 5);
-    dist[start] = 0;
-
-    parrent.resize(countNode, -1);
-    parrent[0] = 0;
-
-    priority_queue<tuple<int, int, int>, vector<tuple<int, int, int>>, greater<tuple<int, int, int>>> q;
-    q.push({0, 0, start});
-
-    while (!q.empty())
+    for(auto d : ss[node])
     {
-        // int cur = q.top().second;
-        // int curLen = q.top().first;
-        int t2, t1, cur;
-        [t2, t1, cur] = q.top();
-        q.pop();
+        int chield = d.first;
+        int curStart = d.second.first;
+        int curFinish = d.second.second;
 
-        if (t2 < dist[cur])
+        if(color[chield] == 1 || tik > curStart)
             continue;
-
-        for (auto chield : ss[cur])
-        {
-            int to = chield.first;
-            int len = chield.second;
-            if (dist[to] > dist[cur] + len)
-            {
-                dist[to] = dist[cur] + len;
-                q.push({dist[to], to});
-                parrent[to] = cur;
-            }
-        }
+        if(ans != -1 && curFinish > ans)
+            continue;
+        dfs(chield, curFinish);
     }
+    color[node] = 2;
 }
 
 void solve()
 {
-    int n, start, finish;
-    cin >> n >> start >> finish;
+    scanf("%d %d %d %d", &n, &start, &finish, &k);
+    //cin>>n>>start>>finish>>k;
     --start, --finish;
+    ss.resize(n);
+    color.resize(n, 0);
 
-    vector<vector<tuple<int, int, int>>> ss(n);
-    vector<int> dist;
-    vector<int> parrent;
-
-    int m;
-    cin >> m;
-
-    for (int i = 0; i < m; i++)
+    for(int i = 0; i < k; i++)
     {
         int a, t1, b, t2;
-        cin >> a >> t1 >> b >> t2;
+        //cin>>a>>t1>>b>>t2;
+        scanf("%d %d %d %d", &a, &t1, &b, &t2);
         --a, --b;
-        ss[a].push_back({b, t1, t2});
-        ss[b].push_back({a, t1, t2});
+        ss[a].push_back({b, {t1, t2}});
     }
-
-    dejkstra(ss, n, start, dist, parrent);
-    printf("%d\n", dist[finish]);
+    dfs(start, 0);
+    //cout << ans;
+    printf("%d", ans);
 }
 
 int main()
 {
     ios_base::sync_with_stdio(false), cin.tie(NULL), cout.tie(NULL);
-
-#ifdef _DEBUG
-    freopen("input-1.txt", "r", stdin);
-    //freopen("output-1.txt", "w", stdout);
-#endif
+    //cout.setf(std::ios::fixed); cout.precision(5);
 
     solve();
     //int t; cin >> t; while(t--) solve();
