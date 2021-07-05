@@ -1,0 +1,10 @@
+#include 
+#include  
+char line[100] = " HELLO! \t\t My name is Lesha. \n";
+
+int main() {
+int lenLine = strlen(line);
+printf("%d \r \n %s\n",lenLene, line);
+return 0;
+}
+//end
