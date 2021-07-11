@@ -1,4 +1,4 @@
-// https://www.e-olymp.com/ru/problems/806
+//https://www.e-olymp.com/ru/problems/806
 #include <bits/stdc++.h>
 using namespace std;
 
