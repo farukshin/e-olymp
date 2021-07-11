@@ -1,0 +1,11 @@
+10
+mountain
+lake
+lake
+zebra
+tree
+lake
+zebra
+zebra
+animal
+lakes
