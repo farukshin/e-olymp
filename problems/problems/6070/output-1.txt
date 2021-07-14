@@ -1,0 +1,7 @@
+Case 1: This list contains 1 sheep.
+
+Case 2: This list contains 3 sheep.
+
+Case 3: This list contains 10 sheep.
+
+Case 4: This list contains 0 sheep.
