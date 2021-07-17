@@ -1,0 +1,5 @@
+sum:5
+sum:10
+sum:19
+sum:55
+sum:45
