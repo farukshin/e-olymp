@@ -1,0 +1,9 @@
+4
+Sidorov 100
+Mamedov 150
+Ivanov 200
+Petrov 120
+3
+Mamedov
+Petrov
+Vasechkin

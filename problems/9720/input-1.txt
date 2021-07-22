@@ -1,0 +1,12 @@
+7
+Mathematics Ivanov
+Physics Petrov
+Mathematics Sidorov
+Mathematics Eliseev
+Physics Egorov
+Mathematics Petrov
+Physics Ivanov
+3
+Mathematics
+Petrov
+Physics

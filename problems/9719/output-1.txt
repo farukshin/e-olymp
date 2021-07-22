@@ -1,0 +1,4 @@
+Ivanov 270
+Mamedov 250
+Petrov 120
+Sidorov 160

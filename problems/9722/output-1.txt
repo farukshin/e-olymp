@@ -1,0 +1,5 @@
+Division by zero
+3
+Division by zero
+7
+2

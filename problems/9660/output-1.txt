@@ -1,0 +1,9 @@
+5
+Petrov Ivan 34 Physics 400
+Babayev Petr 28 Physics 450
+Ermolov Kirill 44 Math 400
+Fedoseev Nikita 38 Math 630
+Egorova Dasha 32 Geography 450
+2
+Ivanov Sergey 28
+Lenov Yuriy 21

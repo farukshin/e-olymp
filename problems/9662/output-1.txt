@@ -1,0 +1,4 @@
+Ermolov Kirill 44 Math 400
+Petrov Ivan 34 Physics 400
+Babayev Petr 28 Physics 450
+Fedoseev Nikita 38 Math 630

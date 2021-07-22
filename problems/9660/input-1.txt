@@ -1,0 +1,7 @@
+Person Ivanov Sergey 28
+Teacher Petrov Ivan 34 Physics 400
+Teacher Babayev Petr 28 Physics 450
+Person Lenov Yuriy 21
+Teacher Ermolov Kirill 44 Math 400
+Teacher Fedoseev Nikita 38 Math 630
+Teacher Egorova Dasha 32 Geography 450
