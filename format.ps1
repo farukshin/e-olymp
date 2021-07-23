@@ -1,0 +1,1 @@
+Get-ChildItem -Path .\problems -Recurse -Filter *.cpp | Foreach-Object { astyle --style=allman --suffix=none --pad-oper ($_.DirectoryName + "\" + $_.Name)}
