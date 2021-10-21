@@ -13,14 +13,14 @@ for ((i=0; i<${#array[@]}; i+=2)); do
 done
 
 link="https://www.e-olymp.com/ru/users/$first/punchcard"
-html=$(curl -s "$link")
+html=$(curl -s -k "$link")
 array1=($(echo $html \
 	| grep -Po '<a title="([a-zA-Z0-9 а-яА-Я_ё\-\-?+*&*!#$@%()№:=]*), 100%" href="/ru/problems/[0-9]*" class='  \
 	| sed -r '/^<a title=".*, 100%" href="\/ru\/problems\/([0-9]*).*$/ s//\1/' \
 	| awk '{print $0;}' ))
 	
 link="https://www.e-olymp.com/ru/users/$second/punchcard"
-html=$(curl -s "$link")
+html=$(curl -s -k "$link")
 array2=($(echo $html \
 	| grep -Po '<a title="([a-zA-Z0-9 а-яА-Я_ё\-\-?+*&*!#$@%()№:=]*), 100%" href="/ru/problems/[0-9]*" class='  \
 	| sed -r '/^<a title=".*, 100%" href="\/ru\/problems\/([0-9]*).*$/ s//\1/' \
