@@ -1,0 +1,7 @@
+apple
+banana
+commit
+orange
+acted
+apple
+ieee
