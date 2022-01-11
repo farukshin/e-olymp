@@ -1,64 +1,100 @@
-//https://www.e-olymp.com/ru/problems/977
-#include <bits/stdc++.h>
+// https://www.eolymp.com/ru/problems/977
+#include <cstdio>
+#include <vector>
 using namespace std;
-
-#define ios_b                         \
-    ios_base::sync_with_stdio(false); \
-    cin.tie(NULL);                    \
-    cout.tie(NULL);
-
 typedef long long ll;
-typedef long double ld;
 
-vector<vector<int>> ss;
-vector<bool> used;
-bool ans = true;
-int k = 0;
+int n, cnt = 0;
+bool fl = false;
+const int MAXARR = 102;
+bool used[MAXARR] = {false};
+vector<int> ss[MAXARR];
 
-void dfs(int node, int parrent)
+template <typename T>
+inline void read(T &f)
 {
-    used[node] = true;
-    k++;
+    f = 0;
+    T fu = 1;
+    char c = getchar();
+    while (c < '0' || c > '9')
+    {
+        if (c == '-')
+            fu = -1;
+        c = getchar();
+    }
+    while (c >= '0' && c <= '9')
+    {
+        f = (f << 3) + (f << 1) + (c & 15);
+        c = getchar();
+    }
+    f *= fu;
+}
 
+template <typename T>
+void print(T x)
+{
+    if (x < 0)
+        putchar('-'), x = -x;
+    if (x < 10)
+        putchar(x + 48);
+    else
+        print(x / 10), putchar(x % 10 + 48);
+}
+
+template <typename T>
+void print(T x, char t)
+{
+    print(x);
+    putchar(t);
+}
+
+void dfs(int node, int par)
+{
+    if (fl)
+        return;
+    used[node] = true;
+    cnt++;
     for (auto chield : ss[node])
-        if (chield != parrent)
-            if (used[chield] || !ans)
-            {
-                ans = false;
-                break;
-            }
+        if (chield != par)
+        {
+            if (used[chield])
+                fl = true;
             else
                 dfs(chield, node);
+        }
 }
 
 void solve()
 {
-    int n, cur;
-    cin >> n;
-    used.resize(n + 1);
-    ss.resize(n + 1);
-    for (int i = 1; i <= n; i++)
-        for (int j = 1; j <= n; j++)
+    read(n);
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < n; j++)
         {
-            cin >> cur;
-            if (cur == 1 && j > i)
+            int a;
+            read(a);
+            if (j < i)
+                continue;
+            if (a == 1 && i == j)
             {
-                ss[j].push_back(i);
+                printf("NO");
+                return;
+            }
+            if (a == 1)
+            {
                 ss[i].push_back(j);
+                ss[j].push_back(i);
             }
         }
 
-    dfs(1, -1);
-    cout << (ans && k == n ? "YES" : "NO") << endl;
+    dfs(0, -1);
+    if (cnt == n && !fl)
+        printf("YES");
+    else
+        printf("NO");
 }
 
 int main()
 {
-    ios_b;
-#ifdef _DEBUG
-    freopen("input-1.txt", "r", stdin);
-    //freopen("output-1.txt", "w", stdout);
-#endif
     solve();
     return 0;
 }
