@@ -14,27 +14,6 @@ void solve()
     cin >> n;
     cout << (n % 4 == 0 && n % 100 != 0 || n % 400 == 0 ? "YES" : "NO") << endl;
     return;
-
-    string s, ans = "", cur;
-    getline(cin, s);
-    bool fl = false;
-    for (auto ch : s)
-        if (!fl && ch == '(')
-            fl = true;
-        else if (fl && ch == ')')
-        {
-            fl = false;
-            reverse(cur.begin(), cur.end());
-            ans += cur;
-            cur = "";
-        }
-        else if (fl)
-            cur += ch;
-        else
-            ans += ch;
-
-
-    cout << ans << endl;
 }
 
 int main()
